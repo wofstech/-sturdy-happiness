@@ -27,13 +27,95 @@ class Myhouses(models.Model):
         (Duplex, 'Duplex'),
     )
 
+
+    Abuja = 'Abuja'
+    Abia = 'Abia'
+    Adamawa = 'Adamawa'
+    Akwa_ibom = 'Akwa Ibom'
+    Anambra = 'Anambra'
+    Bauchi = 'Bauchi'
+    Bayelsa = 'Bayelsa'
+    Benue = 'Benue'
+    Borno = 'Borno'
+    Cross_River = 'Cross River'
+    Delta = 'Delta'
+    Ebonyi = 'Ebonyi'
+    Edo = 'Edo'
+    Ekiti = 'Ekiti'
+    Enugu = 'Enugu'
+    Gombe = 'Gombe'
+    Imo = 'Imo'
+    Jigawa = 'Jigawa'
+    Kaduna = 'Kaduna'
+    Kano = 'Kano'
+    Katsina = 'Katsina'
+    Kebbi = 'Kebbi'
+    Kogi = 'Kogi'
+    Kwara = 'Kwara'
+    Lagos = 'Lagos'
+    Nasarawa = 'Nasarawa'
+    Niger = 'Niger'
+    Ogun = 'Ogun'
+    Ondo = 'Ondo'
+    Osun = 'Osun'
+    Oyo = 'Oyo'
+    Plateau = 'Plateau'
+    Rivers = 'Rivers'
+    Sokoto = 'Sokoto'
+    Taraba = 'Taraba'
+    Yobe = 'Yobe'
+    Zamfara = 'Zamfara'
+    
+    States = (
+        (Abuja, 'Abuja'),
+        (Abia, 'Abia'),
+        (Adamawa, 'Adamawa'),
+        (Akwa_ibom, 'Akwa ibom'),
+        (Anambra, 'Anambra'),
+        (Bauchi, 'Bauchi'),
+        (Bayelsa, 'Bayelsa'),
+        (Benue, 'Benue'),
+        (Borno, 'Borno'),
+        (Cross_River, 'Cross River'),
+        (Delta, 'Delta'),
+        (Ebonyi, 'Ebonyi'),
+        (Edo, 'Edo'),
+        (Ekiti, 'Ekiti'),
+        (Enugu, 'Enugu'),
+        (Gombe, 'Gombe'),
+        (Imo, 'Imo'),
+        (Jigawa, 'Jigawa'),
+        (Kaduna, 'Kaduna'),
+        (Kano, 'Kano'),
+        (Katsina, 'Katsina'),
+        (Kebbi, 'Kebbi'),
+        (Kogi, 'Kogi'),
+        (Kwara,'Kwara'),
+        (Lagos,'Lagos'),
+        (Nasarawa, 'Nasarawa'),
+        (Niger,  'Niger'),
+        (Ogun, 'Ogun'),
+        (Ondo, 'Ondo'),
+        (Osun,  'Osun'),
+        (Oyo, 'Oyo'),
+        (Plateau, 'Plateau'),
+        (Rivers, 'Rivers'),
+        (Sokoto, 'Sokoto'),
+        (Taraba, 'Taraba'),
+        (Yobe, 'Yobe'),
+        (Zamfara, 'Zamfara'),
+
+    )
+
     time = models.DateTimeField(default = datetime.now, blank = True)
     name_of_accomodation = models.CharField(max_length=20)
     type_of_apartment = models.CharField(max_length=20, choices=Room, )
     Number_of_rooms = house_rent = models.IntegerField()
     house_rent = models.IntegerField()
+    Landlord_number = models.IntegerField()
     availability = models.CharField(max_length=2, choices=Availability, default=Available,)
-    location = models.CharField(max_length=200)
+    State = models.CharField(max_length=20, choices=States, )
+    City_or_town = models.CharField(max_length=200)
     nearest_institution = models.CharField(max_length=200)
     description = models.TextField(blank=True)
     house_image = models.ImageField()
@@ -42,7 +124,7 @@ class Myhouses(models.Model):
     house_image4 = models.ImageField()
     house_image5 = models.ImageField()
     house_image6 = models.ImageField()
-    house_image7 = models.ImageField( null=True, blank=True,)
+    house_image7 = models.ImageField(null=True, blank=True,)
     house_image8 = models.ImageField( null=True, blank=True,)
     house_image9 = models.ImageField( null=True, blank=True,)
     house_image10 = models.ImageField( null=True, blank=True,)

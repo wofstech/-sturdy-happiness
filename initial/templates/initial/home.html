@@ -1,8 +1,45 @@
 {% extends "base.html" %}
-
-{% block content %}  
 {% load static %}
 <link rel='stylesheet' href='{% static "account/styles.css" %}'>
+{% block header %}
+        <nav class='navbar navbar-inverse'>
+            <div class='container-fluid'>
+                    <div class='navbar-header'>
+                            <button type='button' class='navbar-toggle' data-toggle='collapse' data-target='#MyNavBar'>
+                                <span class='icon-bar'></span>
+                                <span class='icon-bar'></span>
+                                <span class='icon-bar'></span>
+                            </button>
+                            <a  class='navbar-brand' style="font-family: 'Tangerine', serif; font-size: 48px; color:#000000;">Ywala Housing</a>
+                    </div>
+                    <div 'collapse navbar-collapse'  id='MyNavBar'> 
+                        <ul class='nav navbar-nav navbar-right' style="font-size: 20px;">
+                            <li >
+                                <a href='{% url "register" %}'>
+                                    <span class='glyphicon glyphicon-user' aria-hidden="true"></span>
+                                    Register
+                                </a>
+                            </li>
+                            <li>
+                                <a href='{% url "login" %}'>
+                                    <span class='glyphicon glyphicon-log-in' aria-hidden="true"></span>
+                                    Log-in
+                                </a>
+                            </li>
+                            <li>
+                                <a href='{% url "login" %}'>
+                                    <span class='glyphicon glyphicon-home' aria-hidden="true"></span>
+                                    Rent an Apartment
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+            </div>
+    </nav>
+    {% endblock %}
+{% block content %}  
+
+
 <section id='showcase'>
 <div class='container'>
    <h2>Ywala Housing Helps You Find a Room or Apartment in a Minute</h2><br>
@@ -11,8 +48,6 @@
         <input type='submit' value='Search' class='button_1' id='sub1'>
     </form>
 </div>
-
-
 </section>
 
 <div class='container' style="text-align:center" id='howworks1'>
@@ -84,41 +119,6 @@
         </div>
     </div>
 
-    <footer class='container-fluid ' id='mfoot'>
-        <div class='container'>
-            <div class='row'>
-                <div class='col-sm-4'>
-                    <ul>
-                        <li>About Ywala.com</li>
-                        <li>Ywala Blog</li>
-                        <li>Terms and Conditions</li>
-                        <li>Privacy Policy</li>
-                    </ul>
-                </div>
-
-                <div class='col-sm-4'>
-                    <ul>
-                        <li>Finding a room</li>
-                        <li>How it Works</li>
-                        <li>Why use Ywala.com</li>
-                        <li>FAQ</li>
-                        <li>Refund Policy</li>
-                    </ul>
-                </div>
-
-                <div class='col-sm-4'>
-                    <a href='#' class='fa fa-facebook'></a>
-                    <a href='#' class='fa fa-twitter'></a>
-                    <a href='#' class='fa fa-google'></a>
-                    <a href='#' class='fa fa-youtube'></a>
-                </div>
-
-                
-            </div>
-            
-                <hr style='border-color:#286DA8; border-width: 1px'>
-                <p>Copyright 2018, Ywala.com</p>
-        </div>
-    </footer>
+    
     
 {% endblock %}

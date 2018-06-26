@@ -53,6 +53,8 @@ body {
     text-align: center;
 }
 
+
+
 .sr1{
     width: 90%;
     margin:auto;
@@ -409,6 +411,28 @@ footer{
     .dashcontainer1{
        
         padding: 50px;
+    
+    }
+
+    #showcase{
+        min-height: 300px;
+        text-align: center;
+        padding-bottom: 50px;
+    }
+
+    #showcase h2{
+        margin-top: 100px;
+        font-size: 30px;
+        margin-bottom: 10px;
+    }
+
+    #intry{
+        padding: 10px;
+        border:none;
+        margin-left: 0;
+        margin-bottom: 10px;
+        font-size: 20px;
+        border-radius:10px;
     
     }
 

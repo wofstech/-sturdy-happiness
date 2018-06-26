@@ -22,40 +22,13 @@ def addlisting(request):
             Houses = house_form.save(commit=False)
             Houses.author=request.user
             Houses.save()
+            id = Houses.pk
             messages.success(request, 'Listing Created Succesfully successfully')
-            return redirect('addlisting')           
+            return redirect('detail', id)           
     else:        
         house_form = MyHouseEditForm()
     return render(request, 'houses/addlisting.html', {'house_form':house_form},  )
 
-                  
-def edit(request):    
-    if request.method == 'POST':
-        user_form = UserEditForm(instance=request.user, data=request.POST) 
-        profile_form = ProfileEditForm(instance=request.user.profile, data=request.POST, files=request.FILES)
-        if user_form.is_valid() and profile_form.is_valid():            
-            user_form.save()            
-            profile_form.save()
-            messages.success(request, 'Profile updated successfully') 
-        else:            
-             messages.error(request, 'Error updating your profile') 
-    
-    else:        
-        user_form = UserEditForm(instance=request.user)        
-        profile_form = ProfileEditForm(instance=request.user.profile) 
-
-    return render(request, 'account/edit.html', {'user_form': user_form, 'profile_form': profile_form})
-
-
-
-
-
-
-@login_required
-def listbyuser (request):
-    house_list = Myhouses.objects.filter(author=request.user)
-    profile = Profile.objects.all()
-    return render(request, 'houses/ListingByUser.html', {'house_list':house_list,'profile': profile})
 
 class UserListView(LoginRequiredMixin,generic.ListView):
     model = Myhouses
@@ -82,7 +55,7 @@ def listbyuserdetails(request, id):
 
     return render(request, 'houses/ListingByUserDetails.html', context)
 
-
+@login_required
 def editlist2(request, pk):
     house_edit = get_object_or_404(Myhouses, pk = pk)
     if request.method == 'POST': 
@@ -94,9 +67,9 @@ def editlist2(request, pk):
             return redirect('editlist', pk)           
     else:        
         house_form = MyHouseEditForm(instance=house_edit)
-    return render(request, 'houses/addlisting.html', {'house_form':house_form, 'house_edit': house_edit},  )
+    return render(request, 'houses/editlist.html', {'house_form':house_form, 'house_edit': house_edit},  )
 
-
+@login_required
 def deletelist(request, pk):
     house_delete = get_object_or_404(Myhouses, pk = pk)
     if request.user == house_delete.author:
@@ -107,15 +80,12 @@ def deletelist(request, pk):
         return HttpResponse('unauthorized ACTIVITY')
 
 
-def editlist(request, id):
-    house_edit = Myhouses.objects.get(id = id)
-    if request.method == 'POST': 
-        house_form = MyHouseEditForm(request.POST, files=request.FILES, instance=house_edit)
-        if house_form.is_valid():    
-            Houses = house_form.save(commit=False)
-            Houses.save()
-            messages.success(request, 'Listing Updated Succesfully')
-            return redirect('editlist', id)           
-    else:        
-        house_form = MyHouseEditForm()
-    return render(request, 'houses/editlist.html', {'house_form':house_form},  )
+@login_required
+def phone(request, id):
+    house_list1 = Myhouses.objects.get(id = id)
+
+    context = {
+        'house_list1':house_list1
+    }
+
+    return render(request, 'houses/phone.html', context)

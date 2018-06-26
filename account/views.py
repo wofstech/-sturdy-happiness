@@ -13,8 +13,6 @@ from account.forms import ContactForm
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse, HttpResponseRedirect
 
-def index(request):    
-    return render(request, 'account/index.html')
 
 def user_login(request):    
     if request.method == 'POST':        
@@ -79,7 +77,7 @@ def edit(request):
 
 def search(request):
     query = request.GET.get('q')
-    results = Myhouses.objects.filter(Q(name_of_accomodation__icontains=query) | Q(type_of_apartment__icontains=query) | Q(location__icontains=query))
+    results = Myhouses.objects.filter(Q(name_of_accomodation__icontains=query) | Q(type_of_apartment__icontains=query) | Q(City_or_town__icontains=query) | Q(State__icontains=query) | Q(nearest_institution__icontains=query))
 
     return render(request, 'account/searchme.html', {'results': results})
 
@@ -109,3 +107,5 @@ def contact(request):
 
 def success(request):
     return render(request, 'account/success.html')
+
+
