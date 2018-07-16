@@ -299,7 +299,7 @@ ul.myuserdetails li{
       ),
       url("/static/account/city.jpg");
       color: #ffffff;
-    min-height: 600px;
+    min-height: 1000px;
     text-align: center;
 }
 #sshowcase{
@@ -311,7 +311,7 @@ ul.myuserdetails li{
       ),
       url("/static/account/city.jpg");
       color: #ffffff;
-    min-height: 600px;
+    min-height: 1000px;
     text-align: center;
 }
 
@@ -485,6 +485,36 @@ footer{
         padding: 15px;
         font-size: 30px;
         color:#fff;
+    }
+
+    .glyphicon.glyphicon-search, .glyphicon.glyphicon-cog, .glyphicon.glyphicon-pencil, .glyphicon.glyphicon-inbox, .glyphicon.glyphicon-lock, .glyphicon.glyphicon-usd, .glyphicon.glyphicon-ok, .glyphicon.glyphicon-eye-open, .glyphicon.glyphicon-phone, .glyphicon.glyphicon-flash, .glyphicon.glyphicon-bell, .glyphicon.glyphicon-thumbs-up{
+        font-size: 30px;
+    }
+
+    #sshowcase{
+        background: 
+          /* top, transparent red */
+          linear-gradient(
+            rgba(73,78,104, 0.50),
+            rgba(73,78,104, 0.50)
+          ),
+          url("/static/account/city.jpg");
+          color: #ffffff;
+        min-height: 600px;
+        text-align: center;
+    }
+
+    #lshowcase{
+        background: 
+          /* top, transparent red */
+          linear-gradient(
+            rgba(73,78,104, 0.60),
+            rgba(73,78,104, 0.60)
+          ),
+          url("/static/account/city.jpg");
+          color: #ffffff;
+        min-height: 600px;
+        text-align: center;
     }
    
  
