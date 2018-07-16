@@ -14,17 +14,54 @@ class Myhouses(models.Model):
         (Not_Available, 'Not_Available'),
     )
 
+
+    private = 'Private'
+    Shared = 'Shared'
+    toilet = (
+        (private, 'private'),
+        (Shared, 'Shared'),
+    )
+
+
+    Yes = 'Yes'
+    No = 'No'
+    water = (
+        (Yes, 'Yes'),
+        (No, 'No'),
+    )
+
+    Yes = 'Yes'
+    No = 'No'
+    fence = (
+        (Yes, 'Yes'),
+        (No, 'No'),
+    )
+
+    Yes = 'Yes'
+    No = 'No'
+    park = (
+        (Yes, 'Yes'),
+        (No, 'No'),
+    )
+
+
+
     Flat = 'Flat'
     Self_contained = 'Self Contain'
     Bungalow = 'Bungalow'
     Mini_flat = 'Mini Flat'
     Duplex = 'Duplex'
+    Student_lodge = 'Student Lodge'
+    Student_hostel = 'Student Hostel'
+    Looking_for_roommate = 'Looking for roommate'
     Room = (
         (Flat, 'Flat'),
-        (Self_contained, 'Self_contained'),
+        (Self_contained, 'Self contained'),
         (Bungalow, 'Bungalow'),
-        (Mini_flat, 'Mini_flat'),
-        (Duplex, 'Duplex'),
+        (Mini_flat, 'Mini flat'),
+        (Student_lodge, 'Student lodge'),
+        (Student_hostel, 'Student hostel'),
+        (Looking_for_roommate, 'Looking for roommate'),
     )
 
 
@@ -112,10 +149,18 @@ class Myhouses(models.Model):
     type_of_apartment = models.CharField(max_length=20, choices=Room, )
     Number_of_rooms = house_rent = models.IntegerField()
     house_rent = models.IntegerField()
-    Landlord_number = models.IntegerField()
+    Landlord_number =models.CharField(max_length=200)
     availability = models.CharField(max_length=2, choices=Availability, default=Available,)
     State = models.CharField(max_length=20, choices=States, )
     City_or_town = models.CharField(max_length=200)
+    Street = models.CharField(max_length=200)
+    Size_of_room = models.CharField(max_length=200)
+    Available_from = models.CharField(max_length=200)
+    Toilet = models.CharField(max_length=20, choices=toilet,)
+    Running_water = models.CharField(max_length=20, choices=water)
+    Fenced = models.CharField(max_length=20, choices=fence)
+    Parking_space = models.CharField(max_length=20, choices=park,)
+
     nearest_institution = models.CharField(max_length=200)
     description = models.TextField(blank=True)
     house_image = models.ImageField()
@@ -124,11 +169,11 @@ class Myhouses(models.Model):
     house_image4 = models.ImageField()
     house_image5 = models.ImageField()
     house_image6 = models.ImageField()
-    house_image7 = models.ImageField(null=True, blank=True,)
-    house_image8 = models.ImageField( null=True, blank=True,)
-    house_image9 = models.ImageField( null=True, blank=True,)
-    house_image10 = models.ImageField( null=True, blank=True,)
-    house_image11 = models.ImageField( null=True, blank=True,)
+    house_image7 = models.ImageField(null=True, blank=True, )
+    house_image8 = models.ImageField( null=True, blank=True, )
+    house_image9 = models.ImageField( null=True, blank=True, )
+    house_image10 = models.ImageField( null=True, blank=True, )
+    house_image11 = models.ImageField( null=True, blank=True, )
     house_image12 = models.ImageField( null=True, blank=True,)
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, blank=True, related_name='author')
 

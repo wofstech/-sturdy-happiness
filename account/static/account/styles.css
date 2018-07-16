@@ -56,7 +56,7 @@ body {
 
 
 .sr1{
-    width: 90%;
+    width: 95%;
     margin:auto;
     
 }
@@ -76,6 +76,8 @@ body {
     border:none;
     margin-left: 0;
     font-size: 20px;
+    border:2px solid;
+    border-color: #286DA8;
 
 }
 
@@ -142,7 +144,7 @@ body {
 }
 
 .howworks{
-    margin-top: 60px;
+    margin-top: 40px;
 }
 .login-form{
     width:20%;
@@ -336,7 +338,7 @@ ul.myuserdetails li{
    
 }
 
-#userlisting1{
+#outeruser{
     background: #d3d3d3;
 }
 
@@ -364,6 +366,10 @@ ul.myuserdetails li{
     padding: 30px;
 }
 
+#sbox{
+    border-color: #286DA8;
+}
+
 
 
 ul.searchlist li{
@@ -380,7 +386,6 @@ footer{
     background-color: #494e6b;
     padding: 2%;
     color: #fff; 
-    margin-top: 0; 
     
 }
 
@@ -421,22 +426,66 @@ footer{
     }
 
     #showcase h2{
-        margin-top: 100px;
-        font-size: 30px;
+        margin-top: 50px;
+        font-size: 25px;
         margin-bottom: 10px;
+    }
+
+    .containerme{
+        margin-top: 50%;
+        margin-bottom: 50%;
     }
 
     #intry{
         padding: 10px;
         border:none;
         margin-left: 0;
-        margin-bottom: 10px;
+        border:2px solid;
+    border-color: #286DA8;
         font-size: 20px;
-        border-radius:10px;
+        
     
     }
 
+    .rightguy{
+        float:none;
+    }
     
+    .leftguy{
+        float:none;
+    }
 
+    .carousel .item img{
+        max-height: 300px;
+    }
     
+    #lshowcase form{
+        margin-top: 80px;
+        font-size: 20px;
+        
+    }
+
+    #showcase{
+        background: 
+          /* top, transparent red */
+          linear-gradient(
+            rgba(73,78,104, 0.70),
+            rgba(73,78,104, 0.70)
+          ),
+          url("/static/account/city.jpg");
+          color: #ffffff;
+        
+    }
+
+    #sub1{
+        padding:10px 90px 10px 90px;
+    }
+    
+    .fa{
+        padding: 15px;
+        font-size: 30px;
+        color:#fff;
+    }
+   
+ 
 }

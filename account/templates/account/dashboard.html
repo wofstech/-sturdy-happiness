@@ -4,21 +4,17 @@
  {% load postman_tags %}
 <link rel='stylesheet' href='{% static "account/styles.css" %}'>
  {% block content %}     
-    <section id='showcase'>
+ <section id='showcase'>
         <div class='container'>
-           <h2>Ywala Housing Helps You Find a Room or Apartment in a Minute</h2><br>
+           <h2>Ywala Housing Helps You Find a Room or Apartment in a Minute</h2><br><br><br><br>
            <form method='get' action='{% url "searchme" %}'>
                 <input type='text' name='q' placeholder="Enter Search Keyword" value='{{ request.get.q }}' id='intry' style="color:#000000">
-                <input type='submit' value='Search' class='button_1' id='sub1'>
+                <input type='submit' value='Search' id='sub1' >
             </form>
         </div>
-        
-        
         </section>
-    <section id='dashshowcase'>
-        
-        <div class='dashcontainer1' style="text-align:center" id='dmenu1'>
-                <div class='dmenu'>
+        <br>
+                <div style='width:80%; margin:auto; text-align:center'>
                     {% postman_unread as unread_count %}
                     {% if unread_count == 1 %}
                     <div class='alert alert-success'>
@@ -29,36 +25,82 @@
                            <a style='color:#666666' href='{% url "postman:inbox" %}'>You have <strong>{{ unread_count }}</strong> unread messages.</a>
                     </div>
                     {% endif %}
-                    <div class='row'>
-                            <div class='col-sm-4'  id='dase'>
-                                <span class='glyphicon glyphicon-inbox' aria-hidden="true" style="color: #286da8"></span>
-                                <h3>Inbox</h3>
-                                <p>Have a perfect overview of all your conversations! Favourite, archive, filter and use search to manage your dialogues</p>
-                               <a href='{% url "postman:inbox" %}'><button class='button_1' id='sub1'>Go to Inbox</button></a>
-                            </div>
-            
-                            <div class='col-sm-4' id='dase'>
-                                <span class='glyphicon glyphicon-pencil' aria-hidden="true" style="color: #286da8"></span>
-                                <h3>Your Listing</h3>
-                                <p>Manage existing listing, create new ones, list and unlist them in one click! Instant access with flexible filtering and search!</p>
-                                <a href='{% url "userlist" %}'><button class='button_1' id='sub1'>Manage Listing</button></a>
-                            </div>
-            
-                            <div class='col-sm-4' id='dase'>
-                                <span class='glyphicon glyphicon-cog' aria-hidden="true" style="color: #286da8"></span>
-                                <h3>Your Profile</h3>
-                                <p>Make sure people know who you are so that they can trust you. Add your information and don’t forget to include a picture</p>
-                                <a href='{% url "edit" %}'><button class='button_1' id='sub1'>Edit Profile</button></a>
+                </div>
+                    <div class='container' style="text-align:center" id='howworks1'>
+                            <div class='howworks'>
+                                <h2 >How it Works</h2>
+                                <div class='row'>
+                                        <div class='col-sm-4'>
+                                            <span class='glyphicon glyphicon-search' aria-hidden="true" style="color: #286da8"></span>
+                                            <p>Search for a room or an apartment in any city of your choice</p>
+                                        </div>
+                        
+                                        <div class='col-sm-4'>
+                                            <span class='glyphicon glyphicon-ok' aria-hidden="true" style="color: #286da8"></span>
+                                            <p>Register a Free Account to Contact the Owner</p>
+                                        </div>
+                        
+                                        <div class='col-sm-4'>
+                                            <span class='glyphicon glyphicon-eye-open' aria-hidden="true" style="color: #286da8"></span>
+                                            <p>Arrange a Viewing with the Owner to Inspect the room</p>
+                                        </div>
+                                    </div>
+                                    <hr style='border-color:#494e6b; border-width: 1px'>
                             </div>
                         </div>
-                        <hr style='border-color:#494e6b; border-width: 1px'>
-                </div>
-                <div class='help'>
-                        <h3>HELP US IMPROVE YWALA.COM!</h3>
-                         <p>We take your feedback seriously. More exciting features and improvements are on their way. You can help us by telling us your suggestions on what we should improve. Anything you want to share with us?</p>
-                         <a href='{% url "contact" %}'> <button class='button_1' id='sub1'>Send us a Message</button></a>
-                      </div>
-            </div>
-           
-    </section>
+                        
+                        <div class='container' style="text-align:center" id='whyus'>
+                                <div class='whyus1'>
+                                    <h2 >Why use Ywala Housing</h2>
+                                    <div class='row' id ='frow'>
+                                            <div class='col-sm-4'>
+                                                <span class='glyphicon glyphicon-phone' aria-hidden="true" style="color: #286da8"></span>
+                                                <h3>Simple</h3>
+                                                <p>Simple and easy to use, If you can use a smartPhone, you can use Ywala.com</p>
+                                                <br><br>
+                                            </div>
+                            
+                                            <div class='col-sm-4'>
+                                                <span class='glyphicon glyphicon-flash' aria-hidden="true" style="color: #286da8"></span>
+                                                <h3>Fast</h3>
+                                                <p>We promote your adverts and help you reach hundreds of people to land a tenant fast</p>
+                                                <br><br>
+                                            </div>
+                            
+                                            <div class='col-sm-4'>
+                                                <span class='glyphicon glyphicon-bell' aria-hidden="true" style="color: #286da8"></span>
+                                                <h3>Early Prompts</h3>
+                                                <p>Be the first to know when there is a new room or apartment available in the area/city you want</p>
+                                                <br><br>
+                                            </div>
+                                        </div>
+                        
+                                        <div class='row'>
+                                                <div class='col-sm-4'>
+                                                    <span class='glyphicon glyphicon-lock' aria-hidden="true" style="color: #286da8"></span>
+                                                    <h3>safe</h3>
+                                                    <p>Safety is guaranteed, your safety is important to us and so we have developed systemwith maximum security while ensuring simplicity of use</p>
+                                                    <br><br>
+                                                </div>
+                                
+                                                <div class='col-sm-4'>
+                                                    <span class='glyphicon glyphicon-usd' aria-hidden="true" style="color: #286da8"></span>
+                                                    <h3>Free</h3>
+                                                    <p>finding a suitable room on Ywala.com is completely free </p>
+                                                    <br><br>
+                                                </div>
+                                
+                                                <div class='col-sm-4'>
+                                                    <span class='glyphicon glyphicon-thumbs-up' aria-hidden="true" style="color: #286da8"></span>
+                                                    <h3>Flexible and Secure</h3>
+                                                    <p>Use our secured system to pay your rent. if you dont like the room afterwords, your refund is gurannted. you can also pay directly to the Landlord</p>
+                                                    <br><br>
+                                                </div>
+                                            </div>
+                                        
+                                </div>
+                            </div>
+                        
+                            
+    
     {%  endblock %}

@@ -21,52 +21,65 @@
     </head> 
     <body>  
         {% block header %}
-       <nav class='navbar navbar-inverse' style='padding:0; padding-top:10px; margin:0;'>
-            <div class='container-fluid'>
-                    <div class='navbar-header'>
-                            <button type='button' class='navbar-toggle' data-toggle='collapse' data-target='#MyNavBar'>
-                                <span class='icon-bar'></span>
-                                <span class='icon-bar'></span>
-                                <span class='icon-bar'></span>
-                            </button>
-                            <a  class='navbar-brand' style="font-family: 'Tangerine', serif; font-size: 48px; color:#000000;">Ywala Housing</a>
-                    </div>
-                    <div 'collapse navbar-collapse'  id='MyNavBar'> 
-                        <ul class='nav navbar-nav navbar-right' style="font-size: 20px;">
-                            <li>
-                                <a href='#'>
-                                        {% if user.profile.image  %} 
-                                        <img src='{{ user.profile.image.url }}'  width='50px' height="50px" style='border-radius:50%'>
-                                        {% else %}
-                                        <img src='{% static "account/avatar2.jpg" %}' width='50px' height="50px" style='border-radius:50%'>
-                                        {% endif %}
-                                </a>
-                            </li>
-                            <li>
-                                <a href='{% url "dashboard" %}' class='dash' style='font-size: 15px'>
-                                        
-                                    {% if request.user.is_authenticated %}      
-                                    Hello {{ request.user.first_name }},
-                                    {% endif %}
-                                </a>
-                            </li>
-                            <li>
-                                <a href='{% url "addlisting" %}' class='dash' style='font-size: 15px'>
-                                    <span class='glyphicon glyphicon-home' aria-hidden="true"></span>
-                                    Make a Listing
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href='{% url "postman:inbox" %}' class='dash' style='font-size: 15px'>
-                                    <span class='glyphicon glyphicon-envelope' aria-hidden="true"></span>
-                                    Inbox
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-            </div>
-    </nav>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+              <!-- Brand and toggle get grouped for better mobile display -->
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Ywala Housing</a>
+              </div>
+          
+              <!-- Collect the nav links, forms, and other content for toggling -->
+              <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                
+                <form method='get' action='{% url "searchme" %}' class="navbar-form navbar-right">
+                  <div class="form-group">
+                    <input type="text" class="form-control" id='sbox'name='q' placeholder="Search Houses" value='{{ request.get.q }}'>
+                  </div>
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+                <ul class="nav navbar-nav navbar-right">
+                  
+                  
+                    <a href='#' class='navbar-left'>
+                            {% if user.profile.image  %} 
+                            <img src='{{ user.profile.image.url }}'  width='50px' height="50px" style='border-radius:50%'>
+                            {% else %}
+                            <img src='{% static "account/avatar2.jpg" %}' width='50px' height="50px" style='border-radius:50%'>
+                            {% endif %}
+                    </a>
+                
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style='color:#286DA8'>Hello {{ request.user.first_name }}<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
+                      <li role="separator" class="divider"></li>
+                      <li><a href="{% url 'postman:inbox' %}">Inbox</a></li>
+                      <li role="separator" class="divider"></li>
+                      <li><a href='{% url "userlist" %}'>Manage Listing</a></li>
+                      <li role="separator" class="divider"></li>
+                      <li><a href="#">VIP Search</a></li>
+                      <li role="separator" class="divider"></li>
+                      <li><a href="#">How to get paid</a></li>
+                      <li role="separator" class="divider"></li>
+                      <li><a href='{% url "edit" %}'>Edit Profile</a></li>
+                      <li role="separator" class="divider"></li>
+                      <li><a href='{% url "contact" %}'>Send us a message</a></li>
+                      <li role="separator" class="divider"></li>
+                      <li><a href='{% url "logout" %}'>Logout</a></li>
+                      <li role="separator" class="divider"></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+          </nav>
+         
     {% endblock %}
             
     <div id="content"> 
@@ -85,7 +98,7 @@
                             <li>Privacy Policy</li>
                         </ul>
                     </div>
-    
+                    <br>
                     <div class='col-sm-4'>
                         <ul>
                             <li>Finding a room</li>
@@ -95,14 +108,14 @@
                             <li>Refund Policy</li>
                         </ul>
                     </div>
-    
+                    <br>
                     <div class='col-sm-4'>
                         <a href='#' class='fa fa-facebook'></a>
                         <a href='#' class='fa fa-twitter'></a>
                         <a href='#' class='fa fa-google'></a>
                         <a href='#' class='fa fa-youtube'></a>
                     </div>
-    
+                    <br>
                     
                 </div>
                 

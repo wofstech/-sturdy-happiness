@@ -2,50 +2,42 @@
 {% load static %}
 <link rel='stylesheet' href='{% static "account/styles.css" %}'>
 {% block header %}
-        <nav class='navbar navbar-inverse'>
-            <div class='container-fluid'>
-                    <div class='navbar-header'>
-                            <button type='button' class='navbar-toggle' data-toggle='collapse' data-target='#MyNavBar'>
-                                <span class='icon-bar'></span>
-                                <span class='icon-bar'></span>
-                                <span class='icon-bar'></span>
-                            </button>
-                            <a  class='navbar-brand' style="font-family: 'Tangerine', serif; font-size: 48px; color:#000000;">Ywala Housing</a>
-                    </div>
-                    <div 'collapse navbar-collapse'  id='MyNavBar'> 
-                        <ul class='nav navbar-nav navbar-right' style="font-size: 20px;">
-                            <li >
-                                <a href='{% url "register" %}'>
-                                    <span class='glyphicon glyphicon-user' aria-hidden="true"></span>
-                                    Register
-                                </a>
-                            </li>
-                            <li>
-                                <a href='{% url "login" %}'>
-                                    <span class='glyphicon glyphicon-log-in' aria-hidden="true"></span>
-                                    Log-in
-                                </a>
-                            </li>
-                            <li>
-                                <a href='{% url "login" %}'>
-                                    <span class='glyphicon glyphicon-home' aria-hidden="true"></span>
-                                    Rent an Apartment
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-            </div>
-    </nav>
+        
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Ywala Housing</a>
+          </div>
+      
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            
+            <ul class="nav navbar-nav navbar-right">
+              <li ><a href="{% url 'register' %}" style='color:#286da8'>Register</a></li>
+              <li><a href="{% url 'login' %}" style='color:#286da8'>Login</a></li>
+              <li><a href="{% url 'login' %}" style='color:#286da8'>Rent an apartment</a></li>
+              
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav>
     {% endblock %}
 {% block content %}  
 
 
 <section id='showcase'>
 <div class='container'>
-   <h2>Ywala Housing Helps You Find a Room or Apartment in a Minute</h2><br>
+   <h2>Ywala Housing Helps You Find a Room or Apartment in a Minute</h2><br><br><br><br>
    <form method='get' action='{% url "searchme" %}'>
         <input type='text' name='q' placeholder="Enter Search Keyword" value='{{ request.get.q }}' id='intry' style="color:#000000">
-        <input type='submit' value='Search' class='button_1' id='sub1'>
+        <input type='submit' value='Search' id='sub1' >
     </form>
 </div>
 </section>
@@ -79,20 +71,23 @@
             <div class='row' id ='frow'>
                     <div class='col-sm-4'>
                         <span class='glyphicon glyphicon-phone' aria-hidden="true" style="color: #286da8"></span>
-                        <h3>Ywala</h3>
+                        <h3>Simple</h3>
                         <p>Simple and easy to use, If you can use a smartPhone, you can use Ywala.com</p>
+                        <br><br>
                     </div>
     
                     <div class='col-sm-4'>
                         <span class='glyphicon glyphicon-flash' aria-hidden="true" style="color: #286da8"></span>
                         <h3>Fast</h3>
                         <p>We promote your adverts and help you reach hundreds of people to land a tenant fast</p>
+                        <br><br>
                     </div>
     
                     <div class='col-sm-4'>
                         <span class='glyphicon glyphicon-bell' aria-hidden="true" style="color: #286da8"></span>
                         <h3>Early Prompts</h3>
                         <p>Be the first to know when there is a new room or apartment available in the area/city you want</p>
+                        <br><br>
                     </div>
                 </div>
 
@@ -101,18 +96,21 @@
                             <span class='glyphicon glyphicon-lock' aria-hidden="true" style="color: #286da8"></span>
                             <h3>safe</h3>
                             <p>Safety is guaranteed, your safety is important to us and so we have developed systemwith maximum security while ensuring simplicity of use</p>
+                            <br><br>
                         </div>
         
                         <div class='col-sm-4'>
                             <span class='glyphicon glyphicon-usd' aria-hidden="true" style="color: #286da8"></span>
                             <h3>Free</h3>
                             <p>finding a suitable room on Ywala.com is completely free </p>
+                            <br><br>
                         </div>
         
                         <div class='col-sm-4'>
                             <span class='glyphicon glyphicon-thumbs-up' aria-hidden="true" style="color: #286da8"></span>
                             <h3>Flexible and Secure</h3>
                             <p>Use our secured system to pay your rent. if you dont like the room afterwords, your refund is gurannted. you can also pay directly to the Landlord</p>
+                            <br><br>
                         </div>
                     </div>
                 
