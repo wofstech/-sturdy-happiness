@@ -1,10 +1,12 @@
 from django import forms
 from django.contrib.auth.models import User
-from .models import Profile, Houses, trial
+from .models import Profile, Houses, News
 
 class LoginForm(forms.Form):    
     username = forms.CharField()    
     password = forms.CharField(widget=forms.PasswordInput) 
+
+ 
 
 
 class UserRegistrationForm(forms.ModelForm):    
@@ -33,6 +35,11 @@ class UserEditForm(forms.ModelForm):
         model = User        
         fields = ('first_name', 'last_name', 'email')
 
+class SubForm(forms.ModelForm):    
+    class Meta:        
+        model = News        
+        fields = ( 'email',)
+
 class ProfileEditForm(forms.ModelForm):    
     class Meta:        
         model = Profile 
@@ -42,15 +49,7 @@ class ProfileEditForm(forms.ModelForm):
         }       
         fields = ('__all__')
 
-class HouseEditForm(forms.ModelForm):    
-    class Meta:        
-        model = Houses        
-        fields = ('name_of_accomodation', 'type_of_room', 'house_rent', 'availability', 'location', 'nearest_institution', 'description', 'image') 
 
-class TrialForm(forms.ModelForm):
-    class Meta:
-        model = trial
-        fields = ('name', 'likes')
 
 class ContactForm(forms.Form):
     Your_email = forms.EmailField(required=True)

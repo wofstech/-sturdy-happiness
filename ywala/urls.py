@@ -23,7 +23,7 @@ urlpatterns = [
     url(r'^account/', include('account.urls')),
     url(r'^houses/', include('houses.urls')),
     url(r'^messages/', include('postman.urls', namespace='postman')),
-    url(r'^$', include('initial.urls')),
+    url(r'^', include('initial.urls')),
     url(r'^paystack/', include(('paystack.urls','paystack'),namespace='paystack')),
 ]
 

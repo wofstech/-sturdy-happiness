@@ -44,8 +44,8 @@ body {
     background: 
       /* top, transparent red */
       linear-gradient(
-        rgba(73,78,104, 0.40),
-        rgba(73,78,104, 0.40)
+        rgba(73,78,104, 0.70),
+        rgba(73,78,104, 0.70)
       ),
       url("/static/account/city.jpg");
       color: #ffffff;
@@ -143,7 +143,7 @@ body {
     margin-top: 7px;
 }
 
-.howworks{
+#howworks{
     margin-top: 40px;
 }
 .login-form{
@@ -165,12 +165,30 @@ body {
     transform: translateY(-50%);
 }
 
+#aboutus{
+    
+    background: #f2f2f2;
+    /*
+    box-shadow: 20px 0px 20px 0px grey;
+    */
+}
+
+#innerabout{
+    padding: 20px 20px 20px 20px;
+    width:80%;
+    margin:auto;
+}
+
+
+#imageside{
+    box-shadow: 20px 20px 20px 0px grey;
+}
 
 .howworks h2{
     margin-bottom: 40px;
 }
 
-.whyus1 h2{
+#whyus1 h2{
     margin-bottom: 40px;
 }
 
@@ -243,9 +261,15 @@ ul.myuserdetails li{
 
 }
 
-.responsive{
+.responsive2{
     width:100%;
     height: 150px;
+}
+
+.responsive2{
+    width:100%;
+    height:auto;
+    max-height: 300px;
 }
 
 .userpost{
@@ -345,6 +369,12 @@ ul.myuserdetails li{
 .userlisting{
     width:95%;
     margin: auto;
+  
+}
+
+#userlisting1{
+   
+    background: #d3d3d3;
 }
 
 
@@ -377,6 +407,27 @@ ul.searchlist li{
     padding: 30px;
 }
 
+#newsarea{
+    background: 
+      /* top, transparent red */
+      linear-gradient(
+        rgba(17,17,17, 0.80),
+        rgba(17,17,17, 0.80)
+      ),
+      url("/static/account/letter.jpg");
+      color: #ffffff;
+    min-height: 300px;
+
+}
+
+
+#newsarea1{
+    padding-top:70px;
+    padding-left:150px;
+    
+    width: 50%;
+    
+}
 
 .pic{
     float:right;
@@ -469,8 +520,8 @@ footer{
         background: 
           /* top, transparent red */
           linear-gradient(
-            rgba(73,78,104, 0.70),
-            rgba(73,78,104, 0.70)
+            rgba(17,17,17, 0.70),
+            rgba(17,17,17, 0.70)
           ),
           url("/static/account/city.jpg");
           color: #ffffff;

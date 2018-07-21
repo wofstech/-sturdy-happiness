@@ -1,7 +1,30 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script>
+        new WOW().init();
+    </script>
+  
 {% load static %}
 <link rel='stylesheet' href='{% static "account/styles.css" %}'>
-{% block header %}
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Material Design Bootstrap -->
+    <link href='{% static "account/css/mdb.min.css" %}' rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+
+    <link href='{% static "account/css/style.min.css" %}' rel="stylesheet">
+    <link rel='stylesheet' href='{% static "account/styles.css" %}'>
+</head>
+<body>
+    
         
     <nav class="navbar navbar-default">
         <div class="container-fluid">
@@ -28,8 +51,7 @@
           </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
       </nav>
-    {% endblock %}
-{% block content %}  
+   
 
 
 <section id='showcase'>
@@ -43,30 +65,37 @@
 </section>
 
 <div class='container' style="text-align:center" id='howworks1'>
-    <div class='howworks'>
+    <br><br>
+    <div  id='howworks'>
         <h2 >How it Works</h2>
         <div class='row'>
+            <span class="wow fadeInUp" data-wow-delay="0.3s">
                 <div class='col-sm-4'>
-                    <span class='glyphicon glyphicon-search' aria-hidden="true" style="color: #286da8"></span>
+                   <div class="wow shake" data-wow-delay="1s"> <span class='glyphicon glyphicon-search' aria-hidden="true" style="color: #286da8"></span></div>
                     <p>Search for a room or an apartment in any city of your choice</p>
                 </div>
+            </span>
 
+            <span class="wow fadeInUp" data-wow-delay="0.6s">
                 <div class='col-sm-4'>
-                    <span class='glyphicon glyphicon-ok' aria-hidden="true" style="color: #286da8"></span>
+                    <div class="wow shake" data-wow-delay="1.3s"><span class='glyphicon glyphicon-ok' aria-hidden="true" style="color: #286da8"></span></div>
                     <p>Register a Free Account to Contact the Owner</p>
                 </div>
+            </span>
 
+            <span class="wow fadeInUp" data-wow-delay="0.9s">
                 <div class='col-sm-4'>
-                    <span class='glyphicon glyphicon-eye-open' aria-hidden="true" style="color: #286da8"></span>
+                    <div class="wow shake" data-wow-delay="1.6s">  <span class='glyphicon glyphicon-eye-open' aria-hidden="true" style="color: #286da8"></span></div>
                     <p>Arrange a Viewing with the Owner to Inspect the room</p>
                 </div>
             </div>
+             </span>
             <hr style='border-color:#494e6b; border-width: 1px'>
     </div>
 </div>
 
 <div class='container' style="text-align:center" id='whyus'>
-        <div class='whyus1'>
+        <div class='wow slideInUp' id='whyus1'>
             <h2 >Why use Ywala Housing</h2>
             <div class='row' id ='frow'>
                     <div class='col-sm-4'>
@@ -117,6 +146,94 @@
         </div>
     </div>
 
-    
-    
-{% endblock %}
+    <section id='aboutus'>
+                     
+        <div id='innerabout'>
+
+            <div class='row'>
+                <div class='wow fadeInUpBig'>
+                    <div class='col-sm-6' >
+                       <img src="{% static 'account/logo123.jpg' %}" id='imageside' class='responsive2'>
+                    </div>
+                </div>
+
+                <div class='wow fadeInUpBig' data-wow-delay="0.5s">
+                    <div class='col-sm-6' >
+                        <p style='font-size:18px'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris interdum sapien ut imperdiet rhoncus
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris interdum sapien ut imperdiet rhoncus
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris interdum sapien ut imperdiet rhoncus
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris interdum sapien ut imperdiet rhoncus
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris interdum sapien ut imperdiet rhoncus
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris interdum Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris interdum
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% load bootstrap %}
+    <section class='wow fadeInUp' id='newsarea'>
+        <div id='newsarea1' >
+            <h3>Subscribe to our Newsletter</h3>
+            <p>Don't be left out, enter your email below to recieve regular updates from ywala</p>
+            {% load bootstrap %}
+            <form method="POST" class="post-form" >{% csrf_token %}
+            <div style='display:none'>{{ sub_form.subEmail| bootstrap_horizontal }}</div>
+            {{sub_form.subEmail}}
+            <br>
+            <button  class='btn btn-primary' type="submit" style='font-size:15px'>Submit</button>
+            
+            </form>
+        </div>
+    </section>
+
+    <footer class='container-fluid ' id='mfoot' style='background:#111111;'>
+            <div class='container'>
+                <div class='row'>
+                    <div class='col-sm-4'>
+                        <ul>
+                            <li>About Ywala.com</li>
+                            <li>Ywala Blog</li>
+                            <li>Terms and Conditions</li>
+                            <li>Privacy Policy</li>
+                        </ul>
+                    </div>
+                    <br>
+                    <div class='col-sm-4'>
+                        <ul>
+                            <li>Finding a room</li>
+                            <li>How it Works</li>
+                            <li>Why use Ywala.com</li>
+                            <li>FAQ</li>
+                            <li>Refund Policy</li>
+                        </ul>
+                    </div>
+                    <br>
+                    <div class='col-sm-4'>
+                        <a href='#' class='fa fa-facebook'></a>
+                        <a href='#' class='fa fa-twitter'></a>
+                        <a href='#' class='fa fa-google'></a>
+                        <a href='#' class='fa fa-youtube'></a>
+                    </div>
+                    <br>
+                    
+                </div>
+                
+                    <hr style='border-color:#286DA8; border-width: 1px'>
+                    <p>Copyright 2018, Ywala.com</p>
+            </div>
+        </footer>
+    <script type="text/javascript" src="{% static 'account/js/jquery-3.3.1.min.js' %}"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="{% static 'account/js/popper.min.js' %}"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="{% static 'account/js/mdb.min.js' %}"></script>
+    <script>
+            new WOW().init();
+        </script>
+</body>
+</html>
+
