@@ -44,8 +44,8 @@ body {
     background: 
       /* top, transparent red */
       linear-gradient(
-        rgba(73,78,104, 0.70),
-        rgba(73,78,104, 0.70)
+        rgba(73,78,104, 0.40),
+        rgba(73,78,104, 0.40)
       ),
       url("/static/account/city.jpg");
       color: #ffffff;
@@ -186,6 +186,12 @@ body {
 
 .howworks h2{
     margin-bottom: 40px;
+}
+
+#entire{
+    background: url("/static/account/white3.jpg")  no-repeat;
+    color: #000000;
+    min-height: 300px;
 }
 
 #whyus1 h2{
@@ -520,10 +526,11 @@ footer{
         background: 
           /* top, transparent red */
           linear-gradient(
-            rgba(17,17,17, 0.70),
-            rgba(17,17,17, 0.70)
+            rgba(17,17,17, 0.10),
+            rgba(17,17,17, 0.10)
           ),
-          url("/static/account/city.jpg");
+          url("/static/account/city44.jpg");
+          clip: rect(0, 600px, 700px, 0);
           color: #ffffff;
         
     }
@@ -566,6 +573,12 @@ footer{
           color: #ffffff;
         min-height: 600px;
         text-align: center;
+    }
+
+    #entire{
+        background: url("/static/account/white7.jpg")  no-repeat;
+        color: #000000;
+        min-height: 300px;
     }
    
  
