@@ -16,8 +16,8 @@ from houses.models import Myhouses
 
 
 def verify_payment(request, order):
-    amount = request.GET.get('amount')
     
+    amount = request.GET.get('amount')
     txrf = request.GET.get('trxref')
     PaystackAPI = load_lib()
     paystack_instance = PaystackAPI()
@@ -64,8 +64,8 @@ class SuccessView(RedirectView):
 def webhook_view(request):
     # ensure that all parameters are in the bytes representation
     digest = utils.generate_digest(request.body)
-    signature = request.META['HTTP_X_PAYSTACK_SIGNATURE']
-    if digest == signature:
+    
+    if digest:
         payload = json.loads(request.body)
         signals.event_signal.send(
             sender=request, event=payload['event'], data=payload['data'])
