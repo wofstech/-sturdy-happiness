@@ -12,10 +12,12 @@ from .signals import payment_verified
 from .utils import load_lib
 from django.contrib import messages
 from django.dispatch import receiver
+from houses.models import Myhouses
 
 
 def verify_payment(request, order):
     amount = request.GET.get('amount')
+    
     txrf = request.GET.get('trxref')
     PaystackAPI = load_lib()
     paystack_instance = PaystackAPI()
@@ -23,6 +25,7 @@ def verify_payment(request, order):
     if response[0]:
         payment_verified.send(
             sender=PaystackAPI,
+            username = request.user,
             ref=txrf, amount=int(amount) / 100, order=order)
         return redirect(reverse('paystack:successful_verification', args=[order]))
     return redirect(reverse('paystack:failed_verification', args=[order]))

@@ -1,18 +1,20 @@
 from django.http import HttpResponse 
 from django.shortcuts import render,redirect, get_object_or_404
 from django.contrib.auth import authenticate, login 
-from .forms import MyHouseEditForm
+from .forms import MyHouseEditForm, VipForm
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views import generic
-from . models import Myhouses
+from . models import Myhouses, paid, Paids
 from django.contrib.auth.models import User
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.contrib import messages
 from django.contrib.auth.models import User
 from django.forms import modelformset_factory
 from django.template import RequestContext
+from paystack.signals import payment_verified
+from django.dispatch import receiver
 
 @login_required
 def addlisting(request):    
@@ -43,6 +45,8 @@ class alllisting(LoginRequiredMixin,generic.ListView):
     model = Myhouses
     template_name ='houses/alllisting.html'
     paginate_by = 2
+
+
 
 
 @login_required
@@ -89,3 +93,17 @@ def phone(request, id):
     }
 
     return render(request, 'houses/phone.html', context)
+
+@login_required
+def vipSearch(request):
+    if request.method == 'POST': 
+        vip_form = VipForm(request.POST )
+        if vip_form.is_valid():    
+            vip = vip_form.save(commit=False)
+            vip.save()
+            messages.success(request, 'Information saved successfully')
+            return redirect('dashboard')           
+    else:        
+        vip_form = VipForm()
+    return render(request, 'houses/vip.html', {'vip_form': vip_form})
+

@@ -6,13 +6,17 @@ from django.contrib.auth.decorators import login_required
 from .models import Profile, News
 from django.contrib import messages
 from django.contrib.auth.models import User
-from houses.models import Myhouses
+from houses.models import Myhouses, Paids
 from django.db.models import Q
 from django.views import generic
 from account.forms import ContactForm
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse, HttpResponseRedirect
-
+from django.contrib.auth.mixins import LoginRequiredMixin
+from paystack.signals import payment_verified
+from django.dispatch import receiver
+from django.views import generic
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 def user_login(request):    
     if request.method == 'POST':        
@@ -83,11 +87,31 @@ def search(request):
 
 def search_detail(request, id):
     search_list = Myhouses.objects.get(id = id)
+    related = Myhouses.objects.filter(State__icontains=search_list.State)[:3]
     context = {
-        'search_list': search_list
+        'search_list': search_list,
+        'related': related
     }
 
+    @receiver(payment_verified)
+    def on_payment_verified(sender, ref,amount, username, **kwargs):
+        search_list = Myhouses.objects.get(id = id)
+        name = search_list.name_of_accomodation
+        Paids.objects.create(myRef= ref, amount=amount, username=ref, )
     return render(request, 'houses/mysearch.html', context)
+
+
+class search_detail2(LoginRequiredMixin, generic.DetailView):
+    model = Myhouses
+    template_name = 'houses/mysearch.html'
+    context_object_name = 'search_list'
+    
+
+    def on_payment_verified(sender, ref,amount, username, **kwargs):
+        search_list = Myhouses.objects.get(id = id)
+        name = search_list.name_of_accomodation
+        Paids.objects.create(myRef= ref, amount=amount, username=ref, )
+    
     
 def contact(request):
     if request.method == 'GET':

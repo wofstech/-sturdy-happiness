@@ -18,16 +18,16 @@
         <p>Your username and password didn't match. Please try again.</p>  
           
     {% endif %}
-    <p><a href="{% url "password_reset" %}" style='color:#fff'>Forgotten your  password?</a></p>
+    <p><a href="{% url 'account:password_reset' %}" style='color:#fff'>Forgotten your  password?</a></p>
     <div class="login-form">    
-        <form action="{% url 'login' %}" method="post" >
+        <form action="{% url 'account:login' %}" method="post" >
             {% csrf_token %}
             {% load bootstrap %}
             {{ form|bootstrap}}                 
             <input type="hidden" name="next" value="{{ next }}" />      
             <p><input type="submit" class='button_1' id='sub1' value="Log-in"></p>    
         </form>
-        <p style='font-size:15px'>Don't have an account? Register <a href='{% url "register" %}' style='color:aqua; font-size:18px;'>here</a></p>  
+        <p style='font-size:15px'>Don't have an account? Register <a href='{% url "account:register" %}' style='color:aqua; font-size:18px;'>here</a></p>  
     </div>
 
     </div>

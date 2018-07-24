@@ -7,7 +7,7 @@
 {% block content %}   
     <section id='srs' >
         <br>
-    <div class='sr1'style=''>
+    <div class='sr1'>
             {% if messages %}
             <div class="alert alert-success">
                 <p>    
@@ -199,12 +199,41 @@
 
                         <tr>
                             <td>Do you want to pay for this accomodation with Ywala.com secured payment? </td>
-                            <td>{% paystack_button amount=search_list.house_rent email=user.email %}</td>
+                            <td>{% paystack_button amount=search_list.house_rent email=user.email  %}</td>
                         </tr>
                     </table>
                 
                 </div>
+
+        
+    
+<hr style='border-color:#286DA8;'>
     </div>
-    .
+<div id='related'> 
+    <h3 style='color:#666666'>Related Houses</h3>
+    <div class='row'>
+        {% for relateds in related %}
+            {% if relateds.id != search_list.id %}
+                        <div class='col-sm-6'>
+                            <div id='searchInner'>
+                                <img src='{{relateds.house_image2.url}}'   class='responsive'>
+                                <div>
+                                    <div id='rightsearch'>
+                                        {{relateds.name_of_accomodation}}<br>
+                                        <img src="{% static 'account/bed1.png' %}" width='17px' height='17px'>&nbsp{{relateds.Number_of_rooms}}
+                                    </div>
+                                    <div id='leftsearch'>
+                                        <img src="{% static 'account/loc2.png' %}" width='20px' height='20px' > &nbsp{{relateds.State}}<br>
+                                        <img src="{% static 'account/naira1.png' %}" width='20px' height='20px' >&nbsp{{relateds.house_rent}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+            {% endif %}
+        {% endfor %}
+    </div>  
+</div>
+
+
     </section>
 {% endblock %}

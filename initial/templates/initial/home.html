@@ -43,9 +43,9 @@
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             
             <ul class="nav navbar-nav navbar-right">
-              <li ><a href="{% url 'register' %}" style='color:#286da8'>Register</a></li>
-              <li><a href="{% url 'login' %}" style='color:#286da8'>Login</a></li>
-              <li><a href="{% url 'login' %}" style='color:#286da8'>Rent an apartment</a></li>
+              <li ><a href="{% url 'account:register' %}" style='color:#286da8'>Register</a></li>
+              <li><a href="{% url 'account:login' %}" style='color:#286da8'>Login</a></li>
+              <li><a href="{% url 'account:login' %}" style='color:#286da8'>Rent an apartment</a></li>
               
             </ul>
           </div><!-- /.navbar-collapse -->
@@ -57,7 +57,7 @@
 <section id='showcase'>
 <div class='container'>
    <h2>Ywala Housing Helps You Find a Room or Apartment in a Minute</h2><br><br><br><br>
-   <form method='get' action='{% url "searchme" %}'>
+   <form method='get' action='{% url "account:searchme" %}'>
         <input type='text' name='q' placeholder="Enter Search Keyword" value='{{ request.get.q }}' id='intry' style="color:#000000">
         <input type='submit' value='Search' id='sub1' >
     </form>

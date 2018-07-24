@@ -140,7 +140,7 @@ STATIC_URL = '/static/'
 
 
 from django.urls import reverse_lazy
-LOGIN_REDIRECT_URL = reverse_lazy('dashboard') 
+LOGIN_REDIRECT_URL = reverse_lazy('account:dashboard') 
 LOGIN_URL = reverse_lazy('login') 
 LOGOUT_URL = reverse_lazy('logout')
 
@@ -164,22 +164,9 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 
-AWS_ACCESS_KEY_ID = 'AKIAIUZBQLVR3K7US3FA'
-AWS_SECRET_ACCESS_KEY = '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'
-AWS_STORAGE_BUCKET_NAME = 'pbc-media'
-AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
-
-AWS_S3_OBJECT_PARAMETERS = {
-    'CacheControl': 'max-age=86400',
-}
-
-AWS_LOCATION = 'static'
-
-
-DEFAULT_FILE_STORAGE = 'ywala.storage_backends.MediaStorage'
-
-MEDIA_URL = '//%s.s3.amazonaws.com/media/' % AWS_STORAGE_BUCKET_NAME
-MEDIA_ROOT = MEDIA_URL
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 PAYSTACK_PUBLIC_KEY = 'pk_test_e9ef54c88d345438266459a3011e0c468c47cb8b'
 PAYSTACK_SECRET_KEY= 'sk_test_0caab5412237820ae0172b6fd52ede4a79a0f787'
+PAYSTACK_WEBHOOK_DOMAIN = 'www.ywala.com'

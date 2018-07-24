@@ -20,6 +20,7 @@ urlpatterns = [
        url(r'^searchresult/(?P<id>\d+)/$', views.search_detail, name='search-detail'),
        url(r'^contact', views.contact, name='contact'),
        url(r'^success', views.success, name='success'),
+       url(r'^search-detail2/', views.search_detail2, name='search_detail2'),
 
        
        

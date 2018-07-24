@@ -163,18 +163,18 @@ class Myhouses(models.Model):
 
     nearest_institution = models.CharField(max_length=200)
     description = models.TextField(blank=True)
-    house_image = models.ImageField()
-    house_image2 = models.ImageField()
-    house_image3 = models.ImageField()
-    house_image4 = models.ImageField()
-    house_image5 = models.ImageField()
-    house_image6 = models.ImageField()
-    house_image7 = models.ImageField(null=True, blank=True, )
-    house_image8 = models.ImageField( null=True, blank=True, )
-    house_image9 = models.ImageField( null=True, blank=True, )
-    house_image10 = models.ImageField( null=True, blank=True, )
-    house_image11 = models.ImageField( null=True, blank=True, )
-    house_image12 = models.ImageField( null=True, blank=True,)
+    house_image = models.ImageField(upload_to='documents/')
+    house_image2 = models.ImageField(upload_to='documents/')
+    house_image3 = models.ImageField(upload_to='documents/')
+    house_image4 = models.ImageField(upload_to='documents/')
+    house_image5 = models.ImageField(upload_to='documents/')
+    house_image6 = models.ImageField(upload_to='documents/')
+    house_image7 = models.ImageField(null=True, blank=True, upload_to='documents/')
+    house_image8 = models.ImageField( null=True, blank=True,upload_to='documents/' )
+    house_image9 = models.ImageField( null=True, blank=True,upload_to='documents/' )
+    house_image10 = models.ImageField( null=True, blank=True,upload_to='documents/' )
+    house_image11 = models.ImageField( null=True, blank=True,upload_to='documents/' )
+    house_image12 = models.ImageField( null=True, blank=True, upload_to='documents/')
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, blank=True, related_name='author')
 
     def __str__(self):
@@ -187,4 +187,119 @@ class Myhouses(models.Model):
         ordering = ["-time"]
 
 
+class Vip(models.Model):
+    Flat = 'Flat'
+    Self_contained = 'Self Contain'
+    Bungalow = 'Bungalow'
+    Mini_flat = 'Mini Flat'
+    Duplex = 'Duplex'
+    Student_lodge = 'Student Lodge'
+    Student_hostel = 'Student Hostel'
+    Looking_for_roommate = 'Looking for roommate'
+
+    Room = (
+        (Flat, 'Flat'),
+        (Self_contained, 'Self contained'),
+        (Bungalow, 'Bungalow'),
+        (Mini_flat, 'Mini flat'),
+        (Student_lodge, 'Student lodge'),
+        (Student_hostel, 'Student hostel'),
+        (Looking_for_roommate, 'Looking for roommate'),
+    )
+
+
+    Abuja = 'Abuja'
+    Abia = 'Abia'
+    Adamawa = 'Adamawa'
+    Akwa_ibom = 'Akwa Ibom'
+    Anambra = 'Anambra'
+    Bauchi = 'Bauchi'
+    Bayelsa = 'Bayelsa'
+    Benue = 'Benue'
+    Borno = 'Borno'
+    Cross_River = 'Cross River'
+    Delta = 'Delta'
+    Ebonyi = 'Ebonyi'
+    Edo = 'Edo'
+    Ekiti = 'Ekiti'
+    Enugu = 'Enugu'
+    Gombe = 'Gombe'
+    Imo = 'Imo'
+    Jigawa = 'Jigawa'
+    Kaduna = 'Kaduna'
+    Kano = 'Kano'
+    Katsina = 'Katsina'
+    Kebbi = 'Kebbi'
+    Kogi = 'Kogi'
+    Kwara = 'Kwara'
+    Lagos = 'Lagos'
+    Nasarawa = 'Nasarawa'
+    Niger = 'Niger'
+    Ogun = 'Ogun'
+    Ondo = 'Ondo'
+    Osun = 'Osun'
+    Oyo = 'Oyo'
+    Plateau = 'Plateau'
+    Rivers = 'Rivers'
+    Sokoto = 'Sokoto'
+    Taraba = 'Taraba'
+    Yobe = 'Yobe'
+    Zamfara = 'Zamfara'
     
+    States = (
+        (Abuja, 'Abuja'),
+        (Abia, 'Abia'),
+        (Adamawa, 'Adamawa'),
+        (Akwa_ibom, 'Akwa ibom'),
+        (Anambra, 'Anambra'),
+        (Bauchi, 'Bauchi'),
+        (Bayelsa, 'Bayelsa'),
+        (Benue, 'Benue'),
+        (Borno, 'Borno'),
+        (Cross_River, 'Cross River'),
+        (Delta, 'Delta'),
+        (Ebonyi, 'Ebonyi'),
+        (Edo, 'Edo'),
+        (Ekiti, 'Ekiti'),
+        (Enugu, 'Enugu'),
+        (Gombe, 'Gombe'),
+        (Imo, 'Imo'),
+        (Jigawa, 'Jigawa'),
+        (Kaduna, 'Kaduna'),
+        (Kano, 'Kano'),
+        (Katsina, 'Katsina'),
+        (Kebbi, 'Kebbi'),
+        (Kogi, 'Kogi'),
+        (Kwara,'Kwara'),
+        (Lagos,'Lagos'),
+        (Nasarawa, 'Nasarawa'),
+        (Niger,  'Niger'),
+        (Ogun, 'Ogun'),
+        (Ondo, 'Ondo'),
+        (Osun,  'Osun'),
+        (Oyo, 'Oyo'),
+        (Plateau, 'Plateau'),
+        (Rivers, 'Rivers'),
+        (Sokoto, 'Sokoto'),
+        (Taraba, 'Taraba'),
+        (Yobe, 'Yobe'),
+        (Zamfara, 'Zamfara'),
+
+    )
+
+    type_of_apartment = models.CharField(max_length=20, choices=Room, )
+    Number_of_rooms = models.IntegerField()
+    State = models.CharField(max_length=20, choices=States, )
+    City_or_town = models.CharField(max_length=200)
+
+class paid(models.Model):
+    client = models.CharField(max_length=20, )
+    amount = models.IntegerField()
+    accomodation = models.CharField(max_length=200 )
+
+class Paids(models.Model):
+    amount = models.IntegerField()
+    myRef = models.CharField(max_length=20, )
+    username = models.CharField(max_length=20, )
+    accomodation = models.CharField(max_length=200 )
+
