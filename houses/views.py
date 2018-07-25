@@ -117,8 +117,8 @@ def vipSearch(request):
 
 @receiver(event_signal)
 def on_event_received(sender, event, data, **kwargs):
-    a = 'greatgod'
-    b = 'jesus'
+    a = 'greatgodevent'
+    b = 'jesusevent'
     c = int(4)
     Paids.objects.create(myRef= a, amount=c, username=b, )
     
