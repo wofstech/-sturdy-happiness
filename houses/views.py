@@ -123,7 +123,7 @@ def on_event_received(sender, event, data, **kwargs):
     c = int(4)
     d = data['metadata']['referrer']
     e = (re.findall('\d+', d ))
-    f = e[0]
+    f = int(e[0])
     g = 'Paid'
     house = Myhouses.objects.get(id = f)
     house.Payment_status = g
