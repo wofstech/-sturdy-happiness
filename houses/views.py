@@ -125,8 +125,8 @@ def on_event_received(sender, event, data, **kwargs):
     e = (re.findall('\d+', d ))
     f = int(e[0])
     g = 'Paid'
-    house = Myhouses.objects.get(id = f)
-    house.Payment_status = g
+    editme = get_object_or_404(Myhouses, pk = f)
+    editme.Payment_status = 'Paid'
     Paids.objects.create(myRef= event, amount=c, username=f, )
     
 
