@@ -120,5 +120,8 @@ def on_event_received(sender, event, data, **kwargs):
     a = 'greatgodevent'
     b = 'jesusevent'
     c = int(4)
-    Paids.objects.create(myRef= event, amount=c, username=data, )
+    d = data['domain']
+    Paids.objects.create(myRef= event, amount=c, username=d, )
     
+
+   
