@@ -12,5 +12,6 @@ urlpatterns = [
     url(r'^alllisting/', views.alllisting.as_view(), name='alllisting'),
     url(r'^phone/(?P<id>\d+)$', views.phone, name='phone'),
     url(r'^vipsearch$', views.vipSearch, name='vipSearch'),
+    url(r'^success/(?P<id>\d+)$', views.phone, name='phone'),
     
 ]

@@ -299,7 +299,7 @@ class paid(models.Model):
 
 class Paids(models.Model):
     amount = models.IntegerField()
-    myRef = models.CharField(max_length=20, )
-    username = models.CharField(max_length=20, )
-    accomodation = models.CharField(max_length=200 )
+    myRef = models.TextField( )
+    username = models.TextField()
+    
 

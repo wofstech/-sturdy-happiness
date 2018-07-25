@@ -15,6 +15,8 @@ from django.forms import modelformset_factory
 from django.template import RequestContext
 from paystack.signals import payment_verified
 from django.dispatch import receiver
+from paystack.signals import event_signal
+
 
 @login_required
 def addlisting(request):    
@@ -107,3 +109,16 @@ def vipSearch(request):
         vip_form = VipForm()
     return render(request, 'houses/vip.html', {'vip_form': vip_form})
 
+
+
+
+
+
+
+@receiver(event_signal)
+def on_event_received(sender, event, data, **kwargs):
+    a = 'greatgod'
+    b = 'jesus'
+    c = int(4)
+    Paids.objects.create(myRef= a, amount=c, username=b, )
+    

@@ -64,8 +64,8 @@ class SuccessView(RedirectView):
 def webhook_view(request):
     # ensure that all parameters are in the bytes representation
     digest = utils.generate_digest(request.body)
-    
-    if digest:
+    signature = request.META['HTTP_X_PAYSTACK_SIGNATURE']
+    if digest == signature:
         payload = json.loads(request.body)
         signals.event_signal.send(
             sender=request, event=payload['event'], data=payload['data'])
