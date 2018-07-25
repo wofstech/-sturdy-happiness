@@ -127,6 +127,7 @@ def on_event_received(sender, event, data, **kwargs):
     g = 'Paid'
     editme = get_object_or_404(Myhouses, pk = id)
     editme.Payment_status = g
+    editme.save()
     Paids.objects.create(myRef= event, amount=c, username=id, )
     
 
