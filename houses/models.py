@@ -160,6 +160,7 @@ class Myhouses(models.Model):
     Running_water = models.CharField(max_length=20, choices=water)
     Fenced = models.CharField(max_length=20, choices=fence)
     Parking_space = models.CharField(max_length=20, choices=park,)
+    Payment_status = models.CharField(max_length=10, null=True, blank=True)
 
     nearest_institution = models.CharField(max_length=200)
     description = models.TextField(blank=True)
@@ -299,7 +300,7 @@ class paid(models.Model):
 
 class Paids(models.Model):
     amount = models.IntegerField()
-    myRef = models.TextField( )
+    myRef = models.TextField()
     username = models.TextField()
     
 

@@ -124,8 +124,9 @@ def on_event_received(sender, event, data, **kwargs):
     d = data['metadata']['referrer']
     e = (re.findall('\d+', d ))
     f = e[0]
+    g = 'Paid'
     house = Myhouses.objects.get(id = f)
-    house.availability = 'Not_Available'
+    house.Payment_status = g
     Paids.objects.create(myRef= event, amount=c, username=f, )
     
 
