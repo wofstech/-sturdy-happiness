@@ -16,6 +16,7 @@ from django.template import RequestContext
 from paystack.signals import payment_verified
 from django.dispatch import receiver
 from paystack.signals import event_signal
+import re
 
 
 @login_required
@@ -121,7 +122,9 @@ def on_event_received(sender, event, data, **kwargs):
     b = 'jesusevent'
     c = int(4)
     d = data['metadata']['referrer']
-    Paids.objects.create(myRef= event, amount=c, username=d, )
+    e = (re.findall('\d+', d ))
+    f = e[0]
+    Paids.objects.create(myRef= event, amount=c, username=f, )
     
 
    
