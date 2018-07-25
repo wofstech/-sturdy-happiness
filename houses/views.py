@@ -123,11 +123,11 @@ def on_event_received(sender, event, data, **kwargs):
     c = int(4)
     d = data['metadata']['referrer']
     e = (re.findall('\d+', d ))
-    f = int(e[0])
+    id = int(e[0])
     g = 'Paid'
-    editme = get_object_or_404(Myhouses, pk = f)
-    editme.Payment_status = 'Paid'
-    Paids.objects.create(myRef= event, amount=c, username=f, )
+    editme = get_object_or_404(Myhouses, pk = id)
+    editme.Payment_status = g
+    Paids.objects.create(myRef= event, amount=c, username=id, )
     
 
    
