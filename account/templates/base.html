@@ -7,7 +7,7 @@
         {% load postman_tags %}
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
+        
 
         
 
@@ -62,6 +62,8 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style='color:#286DA8'>Hello {{ request.user.first_name }}<span class="caret"></span></a>
                     <ul class="dropdown-menu">
                       <li><a href="{% url 'account:dashboard' %}">Dashboard</a></li>
+                      <li role="separator" class="divider"></li>
+                      <li><a href="{% url 'addlisting' %}">Make a listing</a></li>
                       <li role="separator" class="divider"></li>
                       <li><a href="{% url 'postman:inbox' %}">Inbox</a></li>
                       <li role="separator" class="divider"></li>
@@ -127,6 +129,7 @@
                     <p>Copyright 2018, Ywala.com</p>
             </div>
         </footer>
+        
         
 </body> 
 </html>

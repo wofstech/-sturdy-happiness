@@ -76,8 +76,7 @@ body {
     border:none;
     margin-left: 0;
     font-size: 20px;
-    border:2px solid;
-    border-color: #286DA8;
+    
 
 }
 
@@ -192,10 +191,10 @@ body {
     background: 
     /* top, transparent red */
     linear-gradient(
-      rgba(255,255,255, 0.85),
-      rgba(255,255,255, 0.85)
+      rgba(255,255,255, 0.90),
+      rgba(255,255,255, 0.90)
     ),
-    url("/static/account/world2.png");
+    url("/static/account/world3.png");
     color: #000000;
     min-height: 300px;
 }
@@ -319,7 +318,7 @@ ul.myuserdetails li{
 
 
 #addhouse{
-    background: #d3d3d3;
+    background: #eaeff3;
     margin-bottom:0;
     margin: 0;
     padding:0;
@@ -388,7 +387,7 @@ ul.myuserdetails li{
 }
 
 #outeruser{
-    background: #d3d3d3;
+    background: #eaeff3;
 }
 
 .userlisting{
@@ -399,7 +398,11 @@ ul.myuserdetails li{
 
 #userlisting1{
    
-    background: #d3d3d3;
+    background: #eaeff3;
+}
+
+#table  tbody tr td#lefty{
+    padding-left:80px
 }
 
 
@@ -515,8 +518,7 @@ footer{
         padding: 10px;
         border:none;
         margin-left: 0;
-        border:2px solid;
-    border-color: #286DA8;
+      
         font-size: 20px;
         
     
@@ -607,7 +609,7 @@ footer{
 
     #newsarea1{
         padding-top:20px;
-        padding-left:10px;
+        padding-left:28px;
         width: 90%;
         
     }

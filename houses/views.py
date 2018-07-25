@@ -105,7 +105,7 @@ def vipSearch(request):
             vip = vip_form.save(commit=False)
             vip.save()
             messages.success(request, 'Information saved successfully')
-            return redirect('dashboard')           
+            return redirect('account:dashboard')           
     else:        
         vip_form = VipForm()
     return render(request, 'houses/vip.html', {'vip_form': vip_form})

@@ -3,6 +3,7 @@
  {% load static %}
  {% load postman_tags %}
 <link rel='stylesheet' href='{% static "account/styles.css" %}'>
+
  {% block content %}     
  <section id='showcase'>
         <div class='container'>
@@ -13,54 +14,62 @@
             </form>
         </div>
         </section>
-        <br>
-                <div style='width:80%; margin:auto; text-align:center'>
-                    {% postman_unread as unread_count %}
-                    {% if unread_count == 1 %}
-                    <div class='alert alert-success'>
-                       <a style='color:#666666' href='{% url "postman:inbox" %}'>You have <strong>{{ unread_count }}</strong> unread message.</a> 
-                    </div>
-                    {% elif unread_count > 1  %}
-                    <div class='alert alert-success'>
-                           <a style='color:#666666' href='{% url "postman:inbox" %}'>You have <strong>{{ unread_count }}</strong> unread messages.</a>
-                    </div>
-                    {% endif %}
-                </div>
-                    <div class='container' style="text-align:center" id='howworks1'>
-                            <div class='howworks'>
-                                    {% if messages %}
-                                    <div class="alert alert-success">
-                                        <p>    
-                                            {% for message in messages %}          
-                                                {{ message|safe }}          
-                                            {% endfor %}  
-                                        </p>
-                                    </div>                     
-                                {% endif %}
-                                <br>
+                
+                <section id='entire'>
+                    <br>
+                    <div style='width:80%; margin:auto; text-align:center'>
+                            {% if messages %}
+                            <div class="alert alert-success">
+                                <p>    
+                                    {% for message in messages %}          
+                                        {{ message|safe }}          
+                                    {% endfor %}  
+                                </p>
+                            </div>                     
+                            {% endif %}
+                            {% postman_unread as unread_count %}
+                            {% if unread_count == 1 %}
+                            <div class='alert alert-success'>
+                               <a style='color:#666666' href='{% url "postman:inbox" %}'>You have <strong>{{ unread_count }}</strong> unread message.</a> 
+                            </div>
+                            {% elif unread_count > 1  %}
+                            <div class='alert alert-success'>
+                                   <a style='color:#666666' href='{% url "postman:inbox" %}'>You have <strong>{{ unread_count }}</strong> unread messages.</a>
+                            </div>
+                            {% endif %}
+                        </div>
+                        <div class='container' style="text-align:center" id='howworks1'>
+                            <br><br>
+                            <div  id='howworks'>
                                 <h2 >How it Works</h2>
                                 <div class='row'>
+                                    <span class="wow fadeInUp" data-wow-delay="0.3s">
                                         <div class='col-sm-4'>
-                                            <span class='glyphicon glyphicon-search' aria-hidden="true" style="color: #286da8"></span>
+                                           <div class="wow shake" data-wow-delay="1s"> <span class='glyphicon glyphicon-search' aria-hidden="true" style="color: #286da8"></span></div>
                                             <p>Search for a room or an apartment in any city of your choice</p>
                                         </div>
+                                    </span>
                         
+                                    <span class="wow fadeInUp" data-wow-delay="0.6s">
                                         <div class='col-sm-4'>
-                                            <span class='glyphicon glyphicon-ok' aria-hidden="true" style="color: #286da8"></span>
+                                            <div class="wow shake" data-wow-delay="1.3s"><span class='glyphicon glyphicon-ok' aria-hidden="true" style="color: #286da8"></span></div>
                                             <p>Register a Free Account to Contact the Owner</p>
                                         </div>
+                                    </span>
                         
+                                    <span class="wow fadeInUp" data-wow-delay="0.9s">
                                         <div class='col-sm-4'>
-                                            <span class='glyphicon glyphicon-eye-open' aria-hidden="true" style="color: #286da8"></span>
+                                            <div class="wow shake" data-wow-delay="1.6s">  <span class='glyphicon glyphicon-eye-open' aria-hidden="true" style="color: #286da8"></span></div>
                                             <p>Arrange a Viewing with the Owner to Inspect the room</p>
                                         </div>
                                     </div>
+                                     </span>
                                     <hr style='border-color:#494e6b; border-width: 1px'>
                             </div>
                         </div>
                         
                         <div class='container' style="text-align:center" id='whyus'>
-                                <div class='whyus1'>
+                                <div class='wow slideInUp' id='whyus1'>
                                     <h2 >Why use Ywala Housing</h2>
                                     <div class='row' id ='frow'>
                                             <div class='col-sm-4'>
@@ -110,12 +119,34 @@
                                         
                                 </div>
                             </div>
-                            <form >
-                                    
-                                    <button type="button" onclick="payWithPaystack()"> Pay </button> 
-                                  </form>
-                                   
-                                    
+                        </section>
+                            <section id='aboutus'>
+                                             
+                                <div id='innerabout'>
+                        
+                                    <div class='row'>
+                                        <div class='wow fadeInUpBig'>
+                                            <div class='col-sm-6' >
+                                               <img src="{% static 'account/logo123.jpg' %}" id='imageside' class='responsive2'>
+                                            </div>
+                                        </div>
+                        
+                                        <div class='wow fadeInUpBig' data-wow-delay="0.5s">
+                                            <div class='col-sm-6' >
+                                                <p style='font-size:18px'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris interdum sapien ut imperdiet rhoncus
+                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris interdum sapien ut imperdiet rhoncus
+                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris interdum sapien ut imperdiet rhoncus
+                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris interdum sapien ut imperdiet rhoncus
+                                                    
+                                                    
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+
+         
                             
     
     {%  endblock %}
