@@ -167,6 +167,6 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-PAYSTACK_PUBLIC_KEY = 'pk_test_e9ef54c88d345438266459a3011e0c468c47cb8b'
-PAYSTACK_SECRET_KEY= 'sk_test_0caab5412237820ae0172b6fd52ede4a79a0f787'
+PAYSTACK_PUBLIC_KEY = 'pk_live_edc40e95b836dcaaa65d5b36a1db34aaa965d077'
+PAYSTACK_SECRET_KEY= 'sk_live_a57c0c54650c1e1d922f921e8d68328f5e395168'
 PAYSTACK_WEBHOOK_DOMAIN = 'www.ywala.com'
