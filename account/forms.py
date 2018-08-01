@@ -14,8 +14,10 @@ class UserRegistrationForm(forms.ModelForm):
     password2 = forms.CharField(label='Repeat password', widget=forms.PasswordInput)
 
     class Meta:        
-        model = User        
-        fields = ('username', 'first_name', 'email')
+        model = User       
+        fields = ('username', 'first_name', 'email', )
+
+    
 
     def clean_password2(self):        
         cd = self.cleaned_data        
@@ -47,7 +49,7 @@ class ProfileEditForm(forms.ModelForm):
             'City_of_residence': 'City of residence/Intended city of residence',
             'if_student': 'if you are a student, what institution are you in?'
         }       
-        fields = ('__all__')
+        fields = ('date_of_birth', 'City_of_residence', 'Type_of_user', 'if_student', 'phone_number', 'gender', 'image')
 
 
 

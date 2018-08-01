@@ -359,7 +359,7 @@ ul.myuserdetails li{
       ),
       url("/static/account/city.jpg");
       color: #ffffff;
-    min-height: 1000px;
+    height: 100vh;
     text-align: center;
 }
 
@@ -578,7 +578,7 @@ footer{
           ),
           url("/static/account/city.jpg");
           color: #ffffff;
-        min-height: 600px;
+        min-height: 650px;
         text-align: center;
     }
 

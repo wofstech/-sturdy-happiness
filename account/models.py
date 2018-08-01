@@ -13,13 +13,23 @@ class Profile(models.Model):
         (Not_employed, 'Not employed'),
         (Undergraduate, 'Undergraduate'),
         (Others, 'Others'),
-    )  
+    ) 
+
+    Male = 'Male'
+    Female = 'Female'
+    Gender = (
+        (Male, 'Male'),
+        (Female, 'Female'),
+    )
+
     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.PROTECT)    
     date_of_birth = models.DateField(blank=True, null=True)
     City_of_residence = models.CharField(max_length=200)
     Type_of_user = models.CharField(max_length=40, choices=User_type, default=Student,)
     if_student = models.CharField(max_length=200, blank=True, null=True)
     image = models.ImageField()
+    phone_number = models.CharField(max_length=30)
+    gender = models.CharField(max_length=40, choices=Gender, default=Male,)
 
     def __str__(self):        
         return 'Profile for user {}'.format(self.user.username)

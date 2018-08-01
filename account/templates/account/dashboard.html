@@ -8,7 +8,7 @@
  <section id='showcase'>
         <div class='container'>
            <h2>Ywala Housing Helps You Find a Room or Apartment in a Minute</h2><br><br><br><br>
-           <form method='get' action='{% url "account:searchme" %}'>
+           <form method='get' action='{% url "searchme" %}'>
                 <input type='text' name='q' placeholder="Enter Search Keyword" value='{{ request.get.q }}' id='intry' style="color:#000000">
                 <input type='submit' value='Search' id='sub1' >
             </form>

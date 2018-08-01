@@ -105,7 +105,7 @@ def vipSearch(request):
             vip = vip_form.save(commit=False)
             vip.save()
             messages.success(request, 'Information saved successfully')
-            return redirect('account:dashboard')           
+            return redirect('dashboard')           
     else:        
         vip_form = VipForm()
     return render(request, 'houses/vip.html', {'vip_form': vip_form})
@@ -129,6 +129,6 @@ def on_event_received(sender, event, data, **kwargs):
     editme.Payment_status = g
     editme.save()
     Paids.objects.create(myRef= event, amount=c, username=id, )
-    
+    return HttpResponse(status=200)
 
    

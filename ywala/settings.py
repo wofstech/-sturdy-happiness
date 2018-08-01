@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'postman',
     'storages',
     'paystack',
+    'widget_tweaks',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -140,7 +141,7 @@ STATIC_URL = '/static/'
 
 
 from django.urls import reverse_lazy
-LOGIN_REDIRECT_URL = reverse_lazy('account:dashboard') 
+LOGIN_REDIRECT_URL = reverse_lazy('dashboard') 
 LOGIN_URL = reverse_lazy('login') 
 LOGOUT_URL = reverse_lazy('logout')
 
