@@ -6,6 +6,7 @@ psycopg2==2.7.4
 whitenoise==3.3.1
 dj_pagination
 Pillow
+widget_tweaks
 haystack
 boto3
 django-storages
