@@ -62,7 +62,7 @@ body {
 }
 
 #srs{
-    background: #d3d3d3;
+    background: #eaeff3;
 }
 
 #showcase h2{
@@ -605,6 +605,7 @@ footer{
         url("/static/account/world2.png");
         color: #000000;
         min-height: 300px;
+        
     }
 
     #newsarea1{
@@ -624,6 +625,10 @@ footer{
         padding: 20px 20px 20px 20px;
         width:90%;
         margin:auto;
+    }
+
+    #howworks1{
+        font-size: 20px;
     }
     
    

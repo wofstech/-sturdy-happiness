@@ -142,44 +142,83 @@
                 <div style='clear:both'>
                     <hr style='border-color:#286DA8;'>
                     <h3><strong>Full Details</strong></h3>
-                    <table class='table table-hover' style="padding:20px;">
-                        <tr>
-                            <td>Apartment Type</td>
-                            <td>{{search_list.type_of_apartment}}</td>
-                        </tr>
+                    <div class='col-sm-6'>
+                            <table class='table table-hover' >
+                                    <tr>
+                                        <td>Apartment Type</td>
+                                        <td>{{house_list1.type_of_apartment}}</td>
+                                    </tr>
+            
+                                    <tr>
+                                        <td>Number of Rooms</td>
+                                        <td>{{house_list1.Number_of_rooms}}</td>
+                                    </tr>
+            
+                                    <tr>
+                                        <td>House Rent</td>
+                                        <td>{{house_list1.house_rent}}</td>
+                                    </tr>
+                
+                                    <tr>
+                                            <td>State</td>
+                                            <td>{{house_list1.State}}</td>
+                                        </tr>
+            
+                                    <tr>
+                                        <td>City or town</td>
+                                        <td>{{house_list1.City_or_town}}</td>
+                                    </tr>
+            
+                                    <tr>
+                                        <td>Street</td>
+                                        <td>{{house_list1.Street}}</td>
+                                    </tr>
+            
+                                    <tr>
+                                        <td>Size of room</td>
+                                        <td>{{house_list1.Size_of_room}}</td>
+                                    </tr>
+                            </table>
+            
+                    </div>
 
-                        <tr>
-                            <td>Number of Rooms</td>
-                            <td>{{search_list.Number_of_rooms}}</td>
-                        </tr>
-
-                        <tr>
-                            <td>House Rent</td>
-                            <td>{{search_list.house_rent}}</td>
-                        </tr>
-
-                        <tr>
-                            <td>State</td>
-                            <td>{{search_list.State}}</td>
-                        </tr>
-    
-                        <tr>
-                            <td>City or town</td>
-                            <td>{{search_list.City_or_town}}</td>
-                        </tr>
-
-                        <tr>
-                            <td>Nearest Institution</td>
-                            <td>{{search_list.nearest_institution}}</td>
-                        </tr>
-
-                        <tr>
-                            <td>This Listing was submitted by</td>
-                            <td> {{search_list.author }}</td>
-                    </tr>
-                                                
-                    </table>
-
+                    <div class='col-sm-6'>
+                        <table class='table table-hover' id='table'>
+                            <tr>
+                                    <td>Available from</td>
+                                    <td id='lefty'>{{house_list1.Available_from}}</td>
+                                </tr>
+        
+                                <tr>
+                                    <td>Nearest Institution</td>
+                                    <td id='lefty'>{{house_list1.nearest_institution}}</td>
+                                </tr>
+        
+                                <tr>
+                                    <td>Toilet</td>
+                                    <td id='lefty'>{{house_list1.Toilet}}</td>
+                                    
+                                </tr>
+        
+                                <tr>
+                                    <td>Running water</td>
+                                    <td id='lefty'>{{house_list1.Running_water}}</td>
+                                </tr>
+        
+                                <tr>
+                                    <td>Fenece</td>
+                                    <td id='lefty'>{{house_list1.Fenced}}</td>
+                                </tr>
+        
+                                <tr>
+                                    <td>Parking_space</td>
+                                    <td id='lefty'>{{house_list1.Parking_space}}</td>
+                                </tr>
+            
+                            </table>
+                    </div>
+                    <div style='clear:both'></div>
+                    
                    <strong><h3>Descritption</h3></strong> 
                     {{search_list.description}}
 
