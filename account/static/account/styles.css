@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family:  sans-serif;
     
    
   }
@@ -167,6 +167,7 @@ body {
 #aboutus{
     
     background: #f2f2f2;
+    padding:30px;
     /*
     box-shadow: 20px 0px 20px 0px grey;
     */
@@ -197,7 +198,10 @@ body {
     url("/static/account/world3.png");
     color: #000000;
     min-height: 300px;
+    
 }
+
+
 
 #whyus1 h2{
     margin-bottom: 40px;
@@ -467,6 +471,23 @@ footer{
     
 }
 
+#vipText{
+    background: #fff;
+    border-radius: 10px;
+    width:70%;
+    padding: 30px;
+}
+
+#look{
+    width:75%;
+    margin:auto;
+}
+
+#outerWall{
+    padding-left:120px;
+    padding-right:120px;
+    background: #d3d3d3;
+}
 
 
 @media (max-width:600px){
@@ -606,6 +627,7 @@ footer{
         color: #000000;
         min-height: 300px;
         
+        
     }
 
     #newsarea1{
@@ -629,6 +651,19 @@ footer{
 
     #howworks1{
         font-size: 20px;
+    }
+
+    #vipText{
+        background: #fff;
+        border-radius: 10px;
+        width:90%;
+        padding: 30px;
+    }
+
+    #outerWall{
+        padding-left:10px;
+        padding-right:10px;
+        background: #d3d3d3;
     }
     
    

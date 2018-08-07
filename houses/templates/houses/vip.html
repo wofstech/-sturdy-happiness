@@ -16,7 +16,16 @@
                             </div>                     
                         {% endif %}
             <br>
-            <h1 style=" font-size: 30px; color:#666666;">Edit your account</h1>  
+            <h1 style=" font-size: 30px; color:#666666;">VIP search</h1>  
+            
+            <div id='vipText'>
+                <div id='vipText2'>
+                    <p>Dear {{ request.user.first_name }}</p>
+                    <p>Our priority is making the process of finding an apartment simple and easy for you. Therefore, we do the search for you while you relax</p>
+                    <p>Create a search profile and we will send you an email when a new listing mathces your search criteria</p>
+                    <p>Let us do the work for you</p>
+                </div>
+            </div>
             <br>
              
             <form method="POST" class="post-form" >
