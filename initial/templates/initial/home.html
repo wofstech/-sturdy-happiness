@@ -25,6 +25,7 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
 </head>
 <body>
+        <div class="preloader"></div>
     
         
     <nav class="navbar navbar-default">
@@ -229,6 +230,7 @@
                     <p>Copyright 2018, Ywala.com</p>
             </div>
         </footer>
+        
     <script type="text/javascript" src="{% static 'account/js/jquery-3.3.1.min.js' %}"></script>
     <!-- Bootstrap tooltips -->
     <script type="text/javascript" src="{% static 'account/js/popper.min.js' %}"></script>
@@ -239,6 +241,13 @@
     <script>
             new WOW().init();
         </script>
+        <script>
+                $(document).ready(function() {
+          setInterval(function() {
+            $(".preloader").fadeOut("slow")
+          }, 3000);
+        });
+            </script>
 </body>
 </html>
 
