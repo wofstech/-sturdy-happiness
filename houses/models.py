@@ -160,6 +160,8 @@ class Myhouses(models.Model):
     Running_water = models.CharField(max_length=20, choices=water)
     Fenced = models.CharField(max_length=20, choices=fence)
     Parking_space = models.CharField(max_length=20, choices=park,)
+    Account_name = models.CharField(max_length=200)
+    Account_number = models.IntegerField()
     Payment_status = models.TextField(default='Not Paid')
 
     nearest_institution = models.CharField(max_length=200)

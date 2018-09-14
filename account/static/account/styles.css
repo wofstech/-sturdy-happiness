@@ -48,6 +48,39 @@ body {
     color: #328cc1;
 }
 
+.dropdown-menu {
+    border-radius: 5px !important;
+    color:#fff;
+    background: 
+        
+         linear-gradient(
+           rgba(17,17,17, 0.70),
+           rgba(17,17,17, 0.70)
+         );
+         
+         
+     }
+   
+.dropdown-menu li{
+    padding-left:20px;
+    padding-right: 20px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    color:#fff;
+}
+
+.dropdown-menu li a{
+   
+    color:#fff;
+}
+
+.dropdown-menu li a:hover{
+
+    color:#286DA8;
+    background: transparent;
+}
+   
+
 .myforms1{
     width: 40%;
     margin: auto;
@@ -349,7 +382,7 @@ ul.myuserdetails li{
 }
 
 .outeruser{
-    width: 90%;
+    width: 95%;
     margin: auto;
 }
 
@@ -502,8 +535,78 @@ footer{
    
 }
 
+.fa.fa-arrow-circle-up{
+    padding:20px;
+    font-size: 60px;
+    color:#286DA8;
+}
+
+.scrollToTop:hover{
+    text-decoration:none;
+}
+
+.scroller{
+    border:2px solid red;
+    border-radius: 50%;
+}
+
+.scrollToTop {
+                    
+    background: none;
+        
+    margin: 0;
+        
+    position: fixed;
+        
+    bottom: 0;
+        
+    right: 0;
+        
+    width: 70px;
+        
+    height: 70px;
+        
+    z-index: 100;
+        
+    display: none;
+        
+    text-decoration: none;
+        
+    color: red;
+        
+    background-color: transparent;
+        
+    }
+        
+        
+        
+    .scrollToTop i {
+        
+        font-size: 60px;
+        
+    }
+
 
 @media (max-width:600px){
+    .dropdown-menu {
+        border-radius: 5px !important;
+        color:#fff;
+        background: 
+            
+            transparent
+             ;
+             
+             
+         }
+       
+    .dropdown-menu li{
+        padding-left:20px;
+        padding-right: 20px;
+        padding-bottom: 5px;
+        padding-top: 5px;
+        color:#fff;
+    }
+    
     .login-form{
         width:80%;
         margin:auto;

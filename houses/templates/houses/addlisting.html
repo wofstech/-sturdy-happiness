@@ -68,10 +68,13 @@
                     </div>
     
                 </div>
-
-                
-    
                 {{ house_form.nearest_institution|bootstrap}}
+                <hr style='border-color:#286DA8;'>
+                
+                <strong> <p>Enter Landlord's Account Details to Receive House Rent</p></strong>
+                {{ house_form.Account_name|bootstrap}}
+                {{ house_form.Account_number|bootstrap}}
+               
                 {{ house_form.Toilet|bootstrap}}
                 {{ house_form.Running_water|bootstrap}}
                 {{ house_form.Fenced|bootstrap}}
@@ -140,8 +143,8 @@
                 </div>
                
                 <br>
+               <button type="submit" class='btn btn-success'>Upload Listing</button>
                
-               <input type="submit" value="Save changes" class='btn btn-success' >
             </form>
             <br>
         </div>

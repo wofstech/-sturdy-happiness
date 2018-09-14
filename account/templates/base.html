@@ -20,6 +20,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
         <link rel='stylesheet' href='{% static "account/styles.css" %}'>
+        <link href='{% static "account/css/mdb.min.css" %}' rel="stylesheet">
         
 
     </head> 
@@ -57,27 +58,27 @@
                             {% endif %}
                             </a>
                         
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style='color:#286DA8'>Hello {{ request.user.first_name }}<span class="caret"></span></a>
-                            <ul class="dropdown-menu">
+                        <li class="dropdown" style="color:white">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style='color:#286DA8; background:transparent'>Hello {{ request.user.first_name }}<span class="caret"></span></a>
+                            <ul class="dropdown-menu dropdown-menu-left">
                             <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
-                            <li role="separator" class="divider"></li>
+                            <li role="separator" class="divider" style='padding:0px'></li>
                             <li><a href="{% url 'addlisting' %}">Make a listing</a></li>
-                            <li role="separator" class="divider"></li>
+                            <li role="separator" class="divider" style='padding:0px'></li>
                             <li><a href="{% url 'postman:inbox' %}">Inbox</a></li>
-                            <li role="separator" class="divider"></li>
+                            <li role="separator" class="divider" style='padding:0px'></li>
                             <li><a href='{% url "userlist" %}'>Manage Listing</a></li>
-                            <li role="separator" class="divider"></li>
+                            <li role="separator" class="divider" style='padding:0px'></li>
                             <li><a href="{% url 'vipSearch' %}">VIP Search</a></li>
-                            <li role="separator" class="divider"></li>
+                            <li role="separator" class="divider" style='padding:0px'></li>
                             <li><a href="#">How to get paid</a></li>
-                            <li role="separator" class="divider"></li>
+                            <li role="separator" class="divider" style='padding:0px'></li>
                             <li><a href='{% url "edit" %}'>Edit Profile</a></li>
-                            <li role="separator" class="divider"></li>
+                            <li role="separator" class="divider" style='padding:0px'></li>
                             <li><a href='{% url "contact" %}'>Send us a message</a></li>
-                            <li role="separator" class="divider"></li>
+                            <li role="separator" class="divider" style='padding:0px'></li>
                             <li><a href='{% url "logout" %}'>Logout</a></li>
-                            <li role="separator" class="divider"></li>
+                            
                             </ul>
                         </li>
                     {% else %}
@@ -92,7 +93,11 @@
           </nav>
          
     {% endblock %}
-            
+    <a href="#" class="scrollToTop" style="display: inline;">
+        <div class="animated bounce infinite" style="">
+            <i class="fa fa-arrow-circle-up"></i>
+        </div> 
+    </a>
     <div id="content"> 
             
         {% block content %} 
@@ -135,6 +140,27 @@
             </div>
         </footer>
         
-        
+        <script>
+    $(document).ready(function(){
+
+//Check to see if the window is top if not then display button
+$(window).scroll(function(){
+    if ($(this).scrollTop() > 600) {
+        $('.scrollToTop').fadeIn();
+    } else {
+        $('.scrollToTop').fadeOut();
+    }
+});
+
+//Click event to scroll to top
+$('.scrollToTop').click(function(){
+    $('html, body').animate({scrollTop : 0},800);
+    return false;
+});
+
+});
+</script>
+
+<script type="text/javascript" src="{% static 'account/js/mdb.min.js' %}"></script>
 </body> 
 </html>
