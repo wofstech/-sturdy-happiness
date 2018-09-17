@@ -163,6 +163,13 @@ STATIC_URL = '/static/'
 # https://warehouse.python.org/project/whitenoise/
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'gabrielabuka3@gmail.com' 
+EMAIL_HOST_PASSWORD = 'ojonugwa'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
 
 
 AWS_ACCESS_KEY_ID = 'AKIAIUZBQLVR3K7US3FA'

@@ -86,6 +86,25 @@ body {
     margin: auto;
 }
 
+.well{
+    width:60%;
+}
+
+.vip-show{
+    margin-right: 100px;
+   
+}
+
+.vip-show-left{
+    float:left;
+
+}
+
+.vip-show-right{
+    float:right;
+    
+}
+
 #showcase{
     background: 
       /* top, transparent red */
@@ -115,13 +134,16 @@ body {
     margin-top: 200px;
     font-size: 55px;
     margin-bottom: 10px;
+    font-weight: bold;
 }
 
 #intry{
     padding: 10px;
-    border:none;
-    margin-left: 0;
+    border: none;
+    margin-right: 0;
     font-size: 20px;
+    border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
     
 
 }
@@ -129,7 +151,9 @@ body {
 #sub1{
     background: #286DA8;
     border:none;
-    margin-right: 0;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin-left: 0;
     padding:10px 30px 10px 30px;
     color:#ffffff;
     font-size: 20px;
@@ -213,6 +237,7 @@ body {
 #aboutus{
     
     background: #f2f2f2;
+    color:#666666;
     padding:30px;
     /*
     box-shadow: 20px 0px 20px 0px grey;
@@ -228,6 +253,7 @@ body {
 
 #imageside{
     box-shadow: 20px 20px 20px 0px grey;
+    border-radius: 20px;
 }
 
 .howworks h2{
@@ -242,7 +268,7 @@ body {
       rgba(255,255,255, 0.90)
     ),
     url("/static/account/world3.png");
-    color: #000000;
+    color:#666666;
     min-height: 300px;
     
 
@@ -308,18 +334,16 @@ ul.myuserdetails li{
 
 #myinner{
     padding: 20px;
-    border-style: dotted;
-    border-width: 2px;
-    border-color: #000000;
+    border: 0.5px solid #d3d3d3;
+    border-radius: 10px;
     margin-bottom: 15px;
 
 }
 
 #myinner2{
     padding: 20px;
-    border-style: dotted;
-    border-width: 2px;
-    border-color: #000000;
+    border: 0.5px solid #d3d3d3;
+    border-radius: 10px;
     margin-bottom: 15px;
 
 }
@@ -541,6 +565,8 @@ footer{
     color:#286DA8;
 }
 
+
+
 .scrollToTop:hover{
     text-decoration:none;
 }
@@ -555,6 +581,7 @@ footer{
     background: none;
         
     margin: 0;
+    margin-right: 10px;
         
     position: fixed;
         
@@ -585,6 +612,59 @@ footer{
         font-size: 60px;
         
     }
+
+#dashboard-showcase{
+    background: #eaeff3;  
+}
+
+.iconLock{
+    width:35%;
+    margin:auto;
+    background: #286DA8;
+    border-radius: 50%;
+    padding:20px;
+    color:white;
+    font-size:35px;
+}
+
+.bottom-dash{
+    width:50%;
+    margin: auto;
+}
+
+.fa.fa-envelope, .fa.fa-home, .fa.fa-address-card, .fa.fa-hands-helping{
+    color:white;
+    font-size: 40px;
+}
+
+.bottom-dash{
+    margin-top: 50px;
+}
+
+.dashboard-showcase2{
+    padding-top:50px;
+    width:80%;
+    margin:auto;
+    
+}
+
+#dash-inner{
+    margin-bottom: 30px;
+}
+
+.dash-p{
+    margin-bottom: 16px;
+}
+
+.contact-p{
+    padding-top:40px;
+    font-size: 30px;
+}
+
+#about-col{
+    padding:30px;
+}
+
 
 
 @media (max-width:600px){
@@ -635,14 +715,15 @@ footer{
     }
 
     #showcase{
-        min-height: 300px;
+        min-height: 500px;
         text-align: center;
         padding-bottom: 50px;
     }
 
     #showcase h2{
-        margin-top: 50px;
+        margin-top: 100px;
         font-size: 25px;
+        font-weight: bold;
         margin-bottom: 10px;
     }
 
@@ -653,10 +734,12 @@ footer{
 
     #intry{
         padding: 10px;
-        border:none;
+     
         margin-left: 0;
       
         font-size: 20px;
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
         
     
     }
@@ -686,7 +769,7 @@ footer{
             rgba(17,17,17, 0.10),
             rgba(17,17,17, 0.10)
           ),
-          url("/static/account/city44.jpg");
+          url("/static/account/city112233.jpg");
           clip: rect(0, 600px, 700px, 0);
           color: #ffffff;
         
@@ -694,6 +777,8 @@ footer{
 
     #sub1{
         padding:10px 90px 10px 90px;
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
     }
     
     .fa{
@@ -703,7 +788,7 @@ footer{
     }
 
     .glyphicon.glyphicon-search, .glyphicon.glyphicon-cog, .glyphicon.glyphicon-pencil, .glyphicon.glyphicon-inbox, .glyphicon.glyphicon-lock, .glyphicon.glyphicon-usd, .glyphicon.glyphicon-ok, .glyphicon.glyphicon-eye-open, .glyphicon.glyphicon-phone, .glyphicon.glyphicon-flash, .glyphicon.glyphicon-bell, .glyphicon.glyphicon-thumbs-up{
-        font-size: 30px;
+        font-size: 50px;
     }
 
     #sshowcase{
@@ -740,7 +825,7 @@ footer{
           rgba(255,255,255, 0.85)
         ),
         url("/static/account/world2.png");
-        color: #000000;
+        color:#666666;
         min-height: 300px;
         
     }
@@ -760,7 +845,7 @@ footer{
 
     #innerabout{
         padding: 20px 20px 20px 20px;
-        width:90%;
+        width:100%;
         margin:auto;
     }
 
@@ -779,6 +864,33 @@ footer{
        
         background: #d3d3d3;
     }
+    
+    .well{
+        width:100%;
+    }
+
+    .vip-show{
+        margin-right: 30px;
+       
+    }
+
+    .dash-p{
+        margin-bottom: 13px;
+    }
+
+    #dash-inner{
+        margin-bottom: 34px;
+    }
+
+    .bottom-dash{
+        width:100%;
+        margin: auto;
+    }
+
+    #about-col{
+        padding:10px;
+    }
+    
     
    
  

@@ -9,9 +9,11 @@ class Myhouses(models.Model):
     
     Available = 'A'
     Not_Available = 'NA'
+    Reserved = 'R'
     Availability = (
         (Available, 'Available'),
         (Not_Available, 'Not_Available'),
+        (Reserved, 'Reserved')
     )
 
 
@@ -53,6 +55,7 @@ class Myhouses(models.Model):
     Duplex = 'Duplex'
     Student_lodge = 'Student Lodge'
     Student_hostel = 'Student Hostel'
+    Others = 'Others'
     Looking_for_roommate = 'Looking for roommate'
     Room = (
         (Flat, 'Flat'),
@@ -61,6 +64,7 @@ class Myhouses(models.Model):
         (Mini_flat, 'Mini flat'),
         (Student_lodge, 'Student lodge'),
         (Student_hostel, 'Student hostel'),
+        (Others, 'Others'),
         (Looking_for_roommate, 'Looking for roommate'),
     )
 
@@ -198,6 +202,7 @@ class Vip(models.Model):
     Duplex = 'Duplex'
     Student_lodge = 'Student Lodge'
     Student_hostel = 'Student Hostel'
+    Others = 'Others'
     Looking_for_roommate = 'Looking for roommate'
 
     Room = (
@@ -207,6 +212,7 @@ class Vip(models.Model):
         (Mini_flat, 'Mini flat'),
         (Student_lodge, 'Student lodge'),
         (Student_hostel, 'Student hostel'),
+        (Others, 'Others'),
         (Looking_for_roommate, 'Looking for roommate'),
     )
 
@@ -294,6 +300,7 @@ class Vip(models.Model):
     Number_of_rooms = models.IntegerField()
     State = models.CharField(max_length=20, choices=States, )
     City_or_town = models.CharField(max_length=200)
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, blank=True, related_name='authorVip')
 
 class paid(models.Model):
     client = models.CharField(max_length=20, )

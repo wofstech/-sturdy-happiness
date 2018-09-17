@@ -154,8 +154,13 @@
                     <div class='col-sm-6'>
                             <table class='table table-hover' >
                                     <tr>
+                                        
                                         <td>Apartment Type</td>
+                                        {% if house_list1.type_of_apartment == "Looking for roommate" %}
+                                        <td style='background:green; border-radius:20px; color:#fff'>{{house_list1.type_of_apartment}}</td>
+                                        {% else %}
                                         <td>{{house_list1.type_of_apartment}}</td>
+                                        {% endif %}
                                     </tr>
             
                                     <tr>

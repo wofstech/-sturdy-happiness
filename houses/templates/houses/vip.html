@@ -26,9 +26,10 @@
                     <p>Let us do the work for you</p>
                 </div>
             </div>
-            <br>
-             
-            <form method="POST" class="post-form" >
+            <br><br><br> 
+             <a href='{% url "viplist" %}'><button class='btn btn-success'>View Your Saved Searches</button></a><br>
+            <h3>Add a New Search</h3>
+             <form method="POST" class="post-form" >
                     {% csrf_token %}    
                 {% load bootstrap %}
                 {{ vip_form|bootstrap}}   

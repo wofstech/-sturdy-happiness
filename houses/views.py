@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views import generic
-from . models import Myhouses, paid, Paids
+from . models import Myhouses, paid, Paids, Vip
 from django.contrib.auth.models import User
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.contrib import messages
@@ -44,6 +44,16 @@ class UserListView(LoginRequiredMixin,generic.ListView):
     def get_queryset(self):
         return Myhouses.objects.filter(author=self.request.user)
 
+class VipListView(LoginRequiredMixin,generic.ListView):
+    model = Vip
+    template_name ='houses/vipByUser.html'
+    paginate_by = 9
+    
+    
+    def get_queryset(self):
+        return Vip.objects.filter(author=self.request.user)
+
+
 class alllisting(LoginRequiredMixin,generic.ListView):
     model = Myhouses
     template_name ='houses/alllisting.html'
@@ -61,6 +71,17 @@ def listbyuserdetails(request, id):
     }
 
     return render(request, 'houses/ListingByUserDetails.html', context)
+
+
+@login_required
+def vipbyuserdetails(request, id):
+    house_list1 = Vip.objects.get(id = id)
+
+    context = {
+        'house_list1':house_list1
+    }
+
+    return render(request, 'houses/vip-details.html', context)
 
 @login_required
 def editlist2(request, pk):
@@ -86,6 +107,17 @@ def deletelist(request, pk):
     else:
         return HttpResponse('unauthorized ACTIVITY')
 
+@login_required
+def deletelist2(request, pk):
+    house_delete = get_object_or_404(Vip, pk = pk)
+    if request.user == house_delete.author:
+        house_delete.delete()
+        messages.success(request, 'Search Deleted Succesfully')
+        return redirect('viplist')
+    else:
+        return HttpResponse('unauthorized ACTIVITY')
+
+
 
 @login_required
 def phone(request, id):
@@ -103,6 +135,7 @@ def vipSearch(request):
         vip_form = VipForm(request.POST )
         if vip_form.is_valid():    
             vip = vip_form.save(commit=False)
+            vip.author=request.user
             vip.save()
             messages.success(request, 'Information saved successfully')
             return redirect('dashboard')           

@@ -1,153 +1,58 @@
 
- {% extends "base.html" %}
- {% load static %}
- {% load postman_tags %}
+{% extends "base.html" %}
+{% load static %}
+{% load postman_tags %}
 <link rel='stylesheet' href='{% static "account/styles.css" %}'>
 
- {% block content %}     
- <section id='showcase'>
-        <div class='container'>
-           <h2>Ywala Housing Helps You Find a Room or Apartment in a Minute</h2><br><br><br><br>
-           <form method='get' action='{% url "searchme" %}'>
-                <input type='text' name='q' placeholder="Enter Search Keyword" value='{{ request.get.q }}' id='intry' style="color:#000000">
-                <input type='submit' value='Search' id='sub1' >
-            </form>
-        </div>
-        </section>
-        <div id='outerWall'>
-                <section id='entire'>
-                    <br>
-                    <div style='width:80%; margin:auto; text-align:center'>
-                            {% if messages %}
-                            <div class="alert alert-success">
-                                <p>    
-                                    {% for message in messages %}          
-                                        {{ message|safe }}          
-                                    {% endfor %}  
-                                </p>
-                            </div>                     
-                            {% endif %}
-                            {% postman_unread as unread_count %}
-                            {% if unread_count == 1 %}
-                            <div class='alert alert-success'>
-                               <a style='color:#666666' href='{% url "postman:inbox" %}'>You have <strong>{{ unread_count }}</strong> unread message.</a> 
-                            </div>
-                            {% elif unread_count > 1  %}
-                            <div class='alert alert-success'>
-                                   <a style='color:#666666' href='{% url "postman:inbox" %}'>You have <strong>{{ unread_count }}</strong> unread messages.</a>
-                            </div>
-                            {% endif %}
-                        </div>
-                        <div class='container' style="text-align:center" id='howworks1'>
-                            <br><br>
-                            <div  id='howworks'>
-                                <h2 >How it Works</h2>
-                                <div class='row'>
-                                    <span class="wow fadeInUp" data-wow-delay="0.3s">
-                                        <div class='col-sm-4'>
-                                           <div class="wow shake" data-wow-delay="1s"> <span class='glyphicon glyphicon-search' aria-hidden="true" style="color: #286da8"></span></div>
-                                            <p>Search for a room or an apartment in any city of your choice</p>
-                                        </div>
-                                    </span>
-                        
-                                    <span class="wow fadeInUp" data-wow-delay="0.6s">
-                                        <div class='col-sm-4'>
-                                            <div class="wow shake" data-wow-delay="1.3s"><span class='glyphicon glyphicon-ok' aria-hidden="true" style="color: #286da8"></span></div>
-                                            <p>Register a Free Account to Contact the Owner</p>
-                                        </div>
-                                    </span>
-                        
-                                    <span class="wow fadeInUp" data-wow-delay="0.9s">
-                                        <div class='col-sm-4'>
-                                            <div class="wow shake" data-wow-delay="1.6s">  <span class='glyphicon glyphicon-eye-open' aria-hidden="true" style="color: #286da8"></span></div>
-                                            <p>Arrange a Viewing with the Owner to Inspect the room</p>
-                                        </div>
-                                    </div>
-                                     </span>
-                                    <hr style='border-color:#494e6b; border-width: 1px'>
-                            </div>
-                        </div>
-                        
-                        <div class='container' style="text-align:center" id='whyus'>
-                                <div class='wow slideInUp' id='whyus1'>
-                                    <h2 >Why use Ywala Housing</h2>
-                                    <div class='row' id ='frow'>
-                                            <div class='col-sm-4'>
-                                                <span class='glyphicon glyphicon-phone' aria-hidden="true" style="color: #286da8"></span>
-                                                <h3>Simple</h3>
-                                                <p>Simple and easy to use, If you can use a smartPhone, you can use Ywala.com</p>
-                                                <br><br>
-                                            </div>
-                            
-                                            <div class='col-sm-4'>
-                                                <span class='glyphicon glyphicon-flash' aria-hidden="true" style="color: #286da8"></span>
-                                                <h3>Fast</h3>
-                                                <p>We promote your adverts and help you reach hundreds of people to land a tenant fast</p>
-                                                <br><br>
-                                            </div>
-                            
-                                            <div class='col-sm-4'>
-                                                <span class='glyphicon glyphicon-bell' aria-hidden="true" style="color: #286da8"></span>
-                                                <h3>Early Prompts</h3>
-                                                <p>Be the first to know when there is a new room or apartment available in the area/city you want</p>
-                                                <br><br>
-                                            </div>
-                                        </div>
-                        
-                                        <div class='row'>
-                                                <div class='col-sm-4'>
-                                                    <span class='glyphicon glyphicon-lock' aria-hidden="true" style="color: #286da8"></span>
-                                                    <h3>safe</h3>
-                                                    <p>Safety is guaranteed, your safety is important to us and so we have developed systemwith maximum security while ensuring simplicity of use</p>
-                                                    <br><br>
-                                                </div>
-                                
-                                                <div class='col-sm-4'>
-                                                    <span class='glyphicon glyphicon-usd' aria-hidden="true" style="color: #286da8"></span>
-                                                    <h3>Free</h3>
-                                                    <p>finding a suitable room on Ywala.com is completely free </p>
-                                                    <br><br>
-                                                </div>
-                                
-                                                <div class='col-sm-4'>
-                                                    <span class='glyphicon glyphicon-thumbs-up' aria-hidden="true" style="color: #286da8"></span>
-                                                    <h3>Flexible and Secure</h3>
-                                                    <p>Use our secured system to pay your rent. if you dont like the room afterwords, your refund is gurannted. you can also pay directly to the Landlord</p>
-                                                    <br><br>
-                                                </div>
-                                            </div>
-                                        
-                                </div>
-                            </div>
-                        </div>
-                        </section>
-                            <section id='aboutus'>
-                                             
-                                <div id='innerabout'>
-                        
-                                    <div class='row'>
-                                        <div class='wow fadeInUpBig'>
-                                            <div class='col-sm-6' >
-                                               <img src="{% static 'account/logo123.jpg' %}" id='imageside' class='responsive2'>
-                                            </div>
-                                        </div>
-                        
-                                        <div class='wow fadeInUpBig' data-wow-delay="0.5s">
-                                            <div class='col-sm-6' >
-                                                <p style='font-size:18px'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris interdum sapien ut imperdiet rhoncus
-                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris interdum sapien ut imperdiet rhoncus
-                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris interdum sapien ut imperdiet rhoncus
-                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris interdum sapien ut imperdiet rhoncus
-                                                    
-                                                    
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </section>
+{% block content %}     
+    <section id='dashboard-showcase'>
+           <div class='dashboard-showcase2'>
+               <div class='row' style='text-align:center'>
+                   <div class='col-sm-4' id='dash-inner'>
+                       <div class='iconLock'>
+                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                       </div>
+                       <div class='dash-Text'>
+                           <h3>Your Inbox</h3>
+                           <p class='dash-p'>Have a perfect overview of all your conversations, archive, filter your dialogues here.</p>
+                           <a href='{% url "postman:inbox" %}'><button class='btn btn-primary'>Go to Inbox</button></a>
+                       </div>
 
-         
-                            
-    
-    {%  endblock %}
+                   </div>
+
+                   <div class='col-sm-4' id='dash-inner'>
+                        <div class='iconLock'>
+                            <i class="fa fa-home" aria-hidden="true"></i>
+                        </div>
+                        <div class='dash-Text'>
+                            <h3>Your Listing</h3>
+                            <p class='dash-p'>Manage existing listing, create new ones, list and unlist them in one click!.</p>
+                            <a href='{% url "userlist" %}'><button class='btn btn-primary'>Manage Listing</button></a>
+                        </div>
+                    </div>
+
+                    <div class='col-sm-4' id='dash-inner'>
+                        <div class='iconLock'>
+                            <i class="fa fa-address-card" aria-hidden="true"></i>
+                        </div>
+                        <div class='dash-Text'>
+                            <h3>Your Profile</h3>
+                            <p class='dash-p'>Make sure people know who you are so that they can trust you. Add your information here.</p>
+                            <a href='{% url "edit" %}'><button class='btn btn-primary'>Edit Profile</button></a>
+                        </div>
+                    
+                    </div>
+               </div>
+               <div class='bottom-dash'>
+                   <div class='bottom-dash2' style='text-align:center'>
+                        <div class='dash-Text'>
+                            <h3>HELP US IMPROVE YWALA.COM</h3>
+                            <p>We take your feedback seriously. More exciting features and improvements are on their way. You can help us by telling us your suggestions on what we should improve. Anything you want to share with us?</p>
+                            <a href='{% url "contact" %}'><button class='btn btn-primary'>Send Us a Feedback</button></a>
+                        </div>
+                   </div>
+                   <br><br>
+               </div>
+           </div>
+    </section>  
+{%  endblock %}

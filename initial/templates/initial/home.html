@@ -55,7 +55,11 @@
       </nav>
    
 
-
+<a href="#" class="scrollToTop" style="display: inline;">
+    <div class="animated bounce infinite" style="">
+        <i class="fa fa-arrow-circle-up"></i>
+    </div> 
+</a>
 <section id='showcase'>
 <div class='container'>
    <h2 style='font-family:Open Sans Condensed'>Ywala Housing Helps You Find a Room or Apartment in a Minute</h2><br><br><br><br>
@@ -76,22 +80,28 @@
         <div class='row'>
             <span class="wow fadeInUp" data-wow-delay="0.3s">
                 <div class='col-sm-4'>
-                   <div class="wow shake" data-wow-delay="1s"> <span class='glyphicon glyphicon-search' aria-hidden="true" style="color: #286da8"></span></div>
-                    <p>Search for a room or an apartment in any city of your choice</p>
+                    <div class='iconLock'>
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                    </div>
+                    <p>Search for a room or an apartment in any city of your choice</p><br><br>
                 </div>
             </span>
 
             <span class="wow fadeInUp" data-wow-delay="0.6s">
                 <div class='col-sm-4'>
-                    <div class="wow shake" data-wow-delay="1.3s"><span class='glyphicon glyphicon-ok' aria-hidden="true" style="color: #286da8"></span></div>
-                    <p>Register a Free Account to Contact the Owner</p>
+                    <div class='iconLock'>
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                    </div>
+                    <p>Register a Free Account to Contact the Owner</p><br><br>
                 </div>
             </span>
 
             <span class="wow fadeInUp" data-wow-delay="0.9s">
                 <div class='col-sm-4'>
-                    <div class="wow shake" data-wow-delay="1.6s">  <span class='glyphicon glyphicon-eye-open' aria-hidden="true" style="color: #286da8"></span></div>
-                    <p>Arrange a Viewing with the Owner to Inspect the room</p>
+                    <div class='iconLock'>
+                        <i class="fa fa-eye" aria-hidden="true"></i>
+                    </div>
+                    <p>Arrange a Viewing with the Owner to Inspect the room</p><br><br>
                 </div>
             </div>
              </span>
@@ -104,21 +114,27 @@
             <h2 >Why use Ywala Housing</h2>
             <div class='row' id ='frow'>
                     <div class='col-sm-4'>
-                        <span class='glyphicon glyphicon-phone' aria-hidden="true" style="color: #286da8"></span>
+                        <div class='iconLock'>
+                                <i class="fa fa-mobile" aria-hidden="true"></i>
+                        </div>
                         <h3>Simple</h3>
                         <p>Simple and easy to use, If you can use a smartPhone, you can use Ywala.com</p>
                         <br><br>
                     </div>
     
                     <div class='col-sm-4'>
-                        <span class='glyphicon glyphicon-flash' aria-hidden="true" style="color: #286da8"></span>
+                        <div class='iconLock'>
+                            <i class="fa fa-bolt" aria-hidden="true"></i>
+                        </div>
                         <h3>Fast</h3>
                         <p>We promote your adverts and help you reach hundreds of people to land a tenant fast</p>
                         <br><br>
                     </div>
     
                     <div class='col-sm-4'>
-                        <span class='glyphicon glyphicon-bell' aria-hidden="true" style="color: #286da8"></span>
+                        <div class='iconLock'>
+                            <i class="fa fa-bell" aria-hidden="true"></i>
+                        </div>
                         <h3>Early Prompts</h3>
                         <p>Be the first to know when there is a new room or apartment available in the area/city you want</p>
                         <br><br>
@@ -127,21 +143,27 @@
 
                 <div class='row'>
                         <div class='col-sm-4'>
-                            <span class='glyphicon glyphicon-lock' aria-hidden="true" style="color: #286da8"></span>
+                            <div class='iconLock'>
+                                <i class="fa fa-lock" aria-hidden="true"></i>
+                            </div>
                             <h3>safe</h3>
                             <p>Safety is guaranteed, your safety is important to us and so we have developed systemwith maximum security while ensuring simplicity of use</p>
                             <br><br>
                         </div>
         
                         <div class='col-sm-4'>
-                            <span class='glyphicon glyphicon-usd' aria-hidden="true" style="color: #286da8"></span>
+                            <div class='iconLock'>
+                                <i class="fa fa-money" aria-hidden="true"></i>
+                            </div>
                             <h3>Free</h3>
                             <p>finding a suitable room on Ywala.com is completely free </p>
                             <br><br>
                         </div>
-        
+                        
                         <div class='col-sm-4'>
-                            <span class='glyphicon glyphicon-thumbs-up' aria-hidden="true" style="color: #286da8"></span>
+                            <div class='iconLock'>
+                                <i class="fa fa-check-square" aria-hidden="true"></i>
+                            </div>
                             <h3>Flexible and Secure</h3>
                             <p>Use our secured system to pay your rent. if you dont like the room afterwords, your refund is gurannted. you can also pay directly to the Landlord</p>
                             <br><br>
@@ -158,13 +180,13 @@
 
             <div class='row'>
                 <div class='wow fadeInUpBig'>
-                    <div class='col-sm-6' >
+                    <div class='col-sm-6' id='about-col'>
                        <img src="{% static 'account/logo123.jpg' %}" id='imageside' class='responsive2'>
                     </div>
                 </div>
 
                 <div class='wow fadeInUpBig' data-wow-delay="0.5s">
-                    <div class='col-sm-6' >
+                    <div class='col-sm-6' id='about-col'>
                         <p style='font-size:18px'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris interdum sapien ut imperdiet rhoncus
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris interdum sapien ut imperdiet rhoncus
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris interdum sapien ut imperdiet rhoncus
@@ -247,7 +269,27 @@
             $(".preloader").fadeOut("slow")
           }, 3000);
         });
-            </script>
+    </script>
+    <script>
+                $(document).ready(function(){
+            
+            //Check to see if the window is top if not then display button
+            $(window).scroll(function(){
+                if ($(this).scrollTop() > 500) {
+                    $('.scrollToTop').fadeIn();
+                } else {
+                    $('.scrollToTop').fadeOut();
+                }
+            });
+            
+            //Click event to scroll to top
+            $('.scrollToTop').click(function(){
+                $('html, body').animate({scrollTop : 0},800);
+                return false;
+            });
+            
+            });
+    </script>
 </body>
 </html>
 
