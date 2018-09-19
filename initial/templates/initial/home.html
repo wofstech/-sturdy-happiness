@@ -4,55 +4,88 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Page Title</title>
+    {% load static %}
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script>
-        new WOW().init();
-    </script>
-  
-{% load static %}
-<link rel='stylesheet' href='{% static "account/styles.css" %}'>
-
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <!-- Material Design Bootstrap -->
-    <link href='{% static "account/css/mdb.min.css" %}' rel="stylesheet">
-    <!-- Your custom styles (optional) -->
-
-    <link href='{% static "account/css/style.min.css" %}' rel="stylesheet">
-    <link rel='stylesheet' href='{% static "account/styles.css" %}'>
+    
     <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:italic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+        <link rel='stylesheet' href='{% static "account/styles.css" %}'>
+        <link href='{% static "account/css/mdb.min.css" %}' rel="stylesheet">
 </head>
 <body>
         <div class="preloader"></div>
     
         
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-          <!-- Brand and toggle get grouped for better mobile display -->
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="{% url 'home' %}">Ywala Housing</a>
-          </div>
-      
-          <!-- Collect the nav links, forms, and other content for toggling -->
-          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            
-            <ul class="nav navbar-nav navbar-right">
-              <li ><a href="{% url 'register' %}" style='color:#286da8'>Register</a></li>
-              <li><a href="{% url 'login' %}" style='color:#286da8'>Login</a></li>
-              <li><a href="{% url 'login' %}" style='color:#286da8'>Rent an apartment</a></li>
+        <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                  <!-- Brand and toggle get grouped for better mobile display -->
+                  <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                      <span class="sr-only">Toggle navigation</span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="{% url 'home' %}">Ywala Housing</a>
+                  </div>
               
-            </ul>
-          </div><!-- /.navbar-collapse -->
-        </div><!-- /.container-fluid -->
-      </nav>
+                  <!-- Collect the nav links, forms, and other content for toggling -->
+                  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    
+                    <form method='get' action='{% url "searchme" %}' class="navbar-form navbar-right">
+                      <div class="form-group">
+                        <input type="text" class="form-control" id='sbox'name='q' placeholder="Search Houses" value='{{ request.get.q }}'>
+                      </div>
+                      <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                    <ul class="nav navbar-nav navbar-right">
+                        {% if user.is_authenticated %}
+                            <a href='#' class='navbar-left'>
+                                {% if user.profile.image  %} 
+                                <img src='{{ user.profile.image.url }}'  width='50px' height="50px" style='border-radius:50%'>
+                                {% else %}
+                                <img src='{% static "account/avatar2.jpg" %}' width='50px' height="50px" style='border-radius:50%'>
+                                {% endif %}
+                                </a>
+                            
+                            <li class="dropdown" style="color:white">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style='color:#286DA8; background:transparent'>Hello {{ request.user.first_name }}<span class="caret"></span></a>
+                                <ul class="dropdown-menu dropdown-menu-left">
+                                <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
+                                <li role="separator" class="divider" style='padding:0px'></li>
+                                <li><a href="{% url 'addlisting' %}">Make a listing</a></li>
+                                <li role="separator" class="divider" style='padding:0px'></li>
+                                <li><a href="{% url 'postman:inbox' %}">Inbox</a></li>
+                                <li role="separator" class="divider" style='padding:0px'></li>
+                                <li><a href='{% url "userlist" %}'>Manage Listing</a></li>
+                                <li role="separator" class="divider" style='padding:0px'></li>
+                                <li><a href="{% url 'vipSearch' %}">VIP Search</a></li>
+                                <li role="separator" class="divider" style='padding:0px'></li>
+                                <li><a href='{% url "edit" %}'>Edit Profile</a></li>
+                                <li role="separator" class="divider" style='padding:0px'></li>
+                                <li><a href='{% url "contact" %}'>Send us a message</a></li>
+                                <li role="separator" class="divider" style='padding:0px'></li>
+                                <li><a href='{% url "logout" %}'>Logout</a></li>
+                                
+                                </ul>
+                            </li>
+                        {% else %}
+                            <li ><a href="{% url 'register' %}" style='color:#286da8'>Register</a></li>
+                            <li><a href="{% url 'login' %}" style='color:#286da8'>Login</a></li>
+                            <li><a href="{% url 'login' %}" style='color:#286da8'>Rent an apartment</a></li>   
+                        {% endif %}
+                        
+                    </ul>
+                  </div><!-- /.navbar-collapse -->
+                </div><!-- /.container-fluid -->
+              </nav>
    
 
 <a href="#" class="scrollToTop" style="display: inline;">
@@ -80,7 +113,7 @@
         <div class='row'>
             <span class="wow fadeInUp" data-wow-delay="0.3s">
                 <div class='col-sm-4'>
-                    <div class='iconLock'>
+                    <div class='iconLock1'>
                         <i class="fa fa-search" aria-hidden="true"></i>
                     </div>
                     <p>Search for a room or an apartment in any city of your choice</p><br><br>
@@ -89,7 +122,7 @@
 
             <span class="wow fadeInUp" data-wow-delay="0.6s">
                 <div class='col-sm-4'>
-                    <div class='iconLock'>
+                    <div class='iconLock1'>
                         <i class="fa fa-user" aria-hidden="true"></i>
                     </div>
                     <p>Register a Free Account to Contact the Owner</p><br><br>
@@ -98,7 +131,7 @@
 
             <span class="wow fadeInUp" data-wow-delay="0.9s">
                 <div class='col-sm-4'>
-                    <div class='iconLock'>
+                    <div class='iconLock1'>
                         <i class="fa fa-eye" aria-hidden="true"></i>
                     </div>
                     <p>Arrange a Viewing with the Owner to Inspect the room</p><br><br>
@@ -114,7 +147,7 @@
             <h2 >Why use Ywala Housing</h2>
             <div class='row' id ='frow'>
                     <div class='col-sm-4'>
-                        <div class='iconLock'>
+                        <div class='iconLock1'>
                                 <i class="fa fa-mobile" aria-hidden="true"></i>
                         </div>
                         <h3>Simple</h3>
@@ -123,7 +156,7 @@
                     </div>
     
                     <div class='col-sm-4'>
-                        <div class='iconLock'>
+                        <div class='iconLock1'>
                             <i class="fa fa-bolt" aria-hidden="true"></i>
                         </div>
                         <h3>Fast</h3>
@@ -132,7 +165,7 @@
                     </div>
     
                     <div class='col-sm-4'>
-                        <div class='iconLock'>
+                        <div class='iconLock1'>
                             <i class="fa fa-bell" aria-hidden="true"></i>
                         </div>
                         <h3>Early Prompts</h3>
@@ -143,7 +176,7 @@
 
                 <div class='row'>
                         <div class='col-sm-4'>
-                            <div class='iconLock'>
+                            <div class='iconLock1'>
                                 <i class="fa fa-lock" aria-hidden="true"></i>
                             </div>
                             <h3>safe</h3>
@@ -152,16 +185,16 @@
                         </div>
         
                         <div class='col-sm-4'>
-                            <div class='iconLock'>
+                            <div class='iconLock1'>
                                     <span >&#8358;</span>
                             </div>
-                            <h3 >Free</h3><br>
+                            <h3 >Free</h3>
                             <p>finding a suitable room on Ywala.com is completely free </p>
                             <br><br>
                         </div>
                         
                         <div class='col-sm-4'>
-                            <div class='iconLock'>
+                            <div class='iconLock1'>
                                 <i class="fa fa-check-square" aria-hidden="true"></i>
                             </div>
                             <h3>Flexible and Secure</h3>
@@ -187,12 +220,12 @@
 
                 <div class='wow fadeInUpBig' data-wow-delay="0.5s">
                     <div class='col-sm-6' id='about-col'>
-                        <p style='font-size:18px'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris interdum sapien ut imperdiet rhoncus
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris interdum sapien ut imperdiet rhoncus
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris interdum sapien ut imperdiet rhoncus
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris interdum sapien ut imperdiet rhoncus
-                            
-                            
+                        <p style='font-size:15px'>
+                                Ywala Housing is a subsidiary of Ywala Limited, Ywala Limited was founded with a strong passion to make a difference in the way people live. With the sole aim of improving the technological and social wellbeing of Nigerians and the world at large.
+                                Ywala Housing starts with Nigeria to completely change the way people search and rent apartments, student hostels, Student Lodges or find roommates and all kinds of housing. We believe that Nigerians deserve more; for example, student life is already difficult here and looking for an apartment shouldn’t be another problem to worry about. Therefore, we at Ywala are here to give Nigerians the more they deserve, comfort and a stress-free way of searching for an apartment right on your mobile phone or computer. 
+                                Ywala Housing is a fast-growing indigenous company with vibrant minds, a dedicated, passionate and diligent team.
+                                With us your comfort is just clicks away.
+                                
                         </p>
                     </div>
                 </div>
@@ -221,8 +254,8 @@
                 <div class='row'>
                     <div class='col-sm-4'>
                         <ul>
-                            <li>About Ywala.com</li>
-                            <li>Ywala Blog</li>
+                            <li><a href='{% url "about-us" %}'>About Ywala.com</a></li>
+                            <li><a href='{% url "blog" %}'>Ywala Blog</a></li>
                             <li>Terms and Conditions</li>
                             <li>Privacy Policy</li>
                         </ul>

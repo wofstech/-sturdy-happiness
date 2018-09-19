@@ -71,8 +71,6 @@
                             <li role="separator" class="divider" style='padding:0px'></li>
                             <li><a href="{% url 'vipSearch' %}">VIP Search</a></li>
                             <li role="separator" class="divider" style='padding:0px'></li>
-                            <li><a href="#">How to get paid</a></li>
-                            <li role="separator" class="divider" style='padding:0px'></li>
                             <li><a href='{% url "edit" %}'>Edit Profile</a></li>
                             <li role="separator" class="divider" style='padding:0px'></li>
                             <li><a href='{% url "contact" %}'>Send us a message</a></li>
@@ -108,8 +106,8 @@
                 <div class='row'>
                     <div class='col-sm-4'>
                         <ul>
-                            <li>About Ywala.com</li>
-                            <li>Ywala Blog</li>
+                            <li><a href='{% url "about-us" %}'>About Ywala.com</a></li>
+                            <li><a href='{% url "blog" %}'>Ywala Blog</a></li>
                             <li>Terms and Conditions</li>
                             <li>Privacy Policy</li>
                         </ul>

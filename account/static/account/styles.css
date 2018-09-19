@@ -281,11 +281,7 @@ body {
     margin-bottom: 40px;
 }
 
-.fa{
-    padding: 20px;
-    font-size: 30px;
-    color:#fff;
-}
+
 
 .fa:hover{
     color: #000000;
@@ -665,9 +661,92 @@ footer{
     padding:30px;
 }
 
+.iconLock1{
+    font-size: 55px;
+    color:#286DA8;
+   
+}
+
+.fa.fa-search, .fa.fa-user, .fa.fa-eye, .fa.fa-mobile, .fa.fa-bolt, .fa.fa-bell, .fa.fa-lock, .fa.fa-check-square{
+    color:#286DA8;
+    font-size: 55px;
+}
+
+.fa.fa-forward{
+    color:#286DA8;
+    font-size: 45px;
+}
+
+.about-page-services{
+    width:60%;
+}
+
+.about-page-image{
+    width:50%;
+}
+
+.about-page-text{
+    margin-top: 60px;
+    width:70%;
+}
+
+.serve-text{
+    margin-left: 30px;
+}
+
+.fa.fa-facebook, .fa.fa-google, .fa.fa-twitter, .fa.fa-youtube{
+    font-size: 40px;
+    color:#fff;
+    padding:10px;
+}
+
+footer a{
+    color:#fff;
+}
+
+.blog-home{
+    background :#eaeff3;
+}
+
+.blog-home-2{
+    padding:50px;
+}
+
+
+.custom-well{
+    background:#fff;
+    padding:10px;
+    border-radius: 10px;
+    width:60%;
+}
+
+.blog-body{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 63px; 
+}
+
+.blog-body-details{
+    font-size: 18px;
+}
 
 
 @media (max-width:600px){
+
+    .custom-well{
+        background:#fff;
+        padding:10px;
+        border-radius: 10px;
+        width:100%;
+    }
+    .about-page-text{
+        margin-top: 60px;
+        width:100%;
+    }
+
+    .about-page-image{
+        width:70%;
+    }
     .dropdown-menu {
         border-radius: 5px !important;
         color:#fff;
@@ -781,11 +860,7 @@ footer{
         border-bottom-right-radius: 0px;
     }
     
-    .fa{
-        padding: 15px;
-        font-size: 30px;
-        color:#fff;
-    }
+    
 
     .glyphicon.glyphicon-search, .glyphicon.glyphicon-cog, .glyphicon.glyphicon-pencil, .glyphicon.glyphicon-inbox, .glyphicon.glyphicon-lock, .glyphicon.glyphicon-usd, .glyphicon.glyphicon-ok, .glyphicon.glyphicon-eye-open, .glyphicon.glyphicon-phone, .glyphicon.glyphicon-flash, .glyphicon.glyphicon-bell, .glyphicon.glyphicon-thumbs-up{
         font-size: 50px;
@@ -902,7 +977,9 @@ footer{
     }
     
 }
+
 @media (min-width:601px) and (max-width:1040px) {
+    
     .iconLock{
         width:55%;
         margin:auto;

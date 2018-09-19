@@ -15,6 +15,8 @@ def home(request):
         sub_form = Subme()
     return render(request, 'initial/home.html', {'sub_form': sub_form})
 
-def home1(request):    
-    return render(request, 'initial/home1.html', {'sub_form': sub_form})
+def about(request):    
+    return render(request, 'initial/about.html')
+
+
 

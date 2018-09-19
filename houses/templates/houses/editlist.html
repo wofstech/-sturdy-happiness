@@ -71,6 +71,9 @@
                 
     
                 {{ house_form.nearest_institution|bootstrap}}
+                <strong> <p>Enter Landlord's Account Details to Receive House Rent</p></strong>
+                {{ house_form.Account_name|bootstrap}}
+                {{ house_form.Account_number|bootstrap}}
                 {{ house_form.Toilet|bootstrap}}
                 {{ house_form.Running_water|bootstrap}}
                 {{ house_form.Fenced|bootstrap}}
@@ -139,8 +142,8 @@
                 </div>
                
                 <br>
-               
-               <input type="submit" value="Save changes" class='btn btn-success' >
+               <button type="submit" class='btn btn-success'>Save Changes</button>
+            
             </form>
             <br>
         </div>

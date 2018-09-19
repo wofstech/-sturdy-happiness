@@ -36,6 +36,7 @@ ALLOWED_HOSTS = ['sheltered-falls-26116.herokuapp.com', '127.0.0.1', 'www.ywala.
 INSTALLED_APPS = [
     'account',
     'houses',
+    'blog',
     'initial',
     'bootstrap3',
     'bootstrapform',

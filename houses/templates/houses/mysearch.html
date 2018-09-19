@@ -3,6 +3,7 @@
 {% load bootstrap3 %}
 {% load pagination_tags %}
 {% load paystack %}
+{% load spacing %}
 <link rel='stylesheet' href='{% static "account/styles.css" %}'>
 {% block content %}   
     <section id='srs' >
@@ -224,7 +225,7 @@
                     <div style='clear:both'></div>
                     
                    <strong><h3>Descritption</h3></strong> 
-                    {{search_list.description}}
+                    {{search_list.description|keep_spacing}}
 
                     <br>
                     <hr style='border-color:#286DA8;'>

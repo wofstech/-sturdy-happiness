@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load spacing %}
 <link rel='stylesheet' href='{% static "account/styles.css" %}'>
 {% block content %}
     <section id='userlisting1' >
@@ -235,7 +236,7 @@
                         
                     <div style='clear:both'></div>
                    <strong><h3>Descritption</h3></strong> 
-                    {{house_list1.description}}<br><br><br>
+                    {{house_list1.description|keep_spacing}}<br><br><br>
 
                     </ul>
                     

@@ -92,7 +92,10 @@ def editlist2(request, pk):
             Houses = house_form.save(commit=False)
             Houses.save()
             messages.success(request, 'Listing Updated Succesfully')
-            return redirect('editlist2', pk)           
+            return redirect('editlist2', pk) 
+        else:
+            messages.success(request, 'Error Updating Listing')
+            return redirect('editlist2', pk)         
     else:        
         house_form = MyHouseEditForm(instance=house_edit)
     return render(request, 'houses/editlist.html', {'house_form':house_form, 'house_edit': house_edit},  )
