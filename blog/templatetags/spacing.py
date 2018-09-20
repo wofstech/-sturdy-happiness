@@ -4,6 +4,7 @@ from django.utils.text import normalize_newlines
 from django.utils.html import escape
 from django import template
 register = template.Library()
+
 @register.filter(is_safe=True, needs_autoescape=True)
 @stringfilter
 def keep_spacing(value, autoescape=None):

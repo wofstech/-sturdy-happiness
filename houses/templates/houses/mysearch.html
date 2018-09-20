@@ -148,7 +148,7 @@
                                     <tr>
                                         <td>Apartment Type</td>
                                         {% if search_list.type_of_apartment == "Looking for roommate" %}
-                                        <td style='background:green; border-radius:20px; color:#fff'>{{house_list1.type_of_apartment}}</td>
+                                        <td style='background:green; border-radius:20px; color:#fff'>{{search_list.type_of_apartment}}</td>
                                         {% else %}
                                         <td>{{search_list.type_of_apartment}}</td>
                                         {% endif %}
@@ -241,10 +241,16 @@
                             <td><a href='{% url "phone" search_list.id %}'> <button class='btn btn-success'>Yes!</button></a></td>
                         </tr>
 
-                        <tr>
-                            <td>Do you want to pay for this accomodation with Ywala.com secured payment? </td>
-                            <td>{% paystack_button amount=search_list.house_rent email=user.email  %}</td>
-                        </tr>
+                        {% if search_list.Payment_status == 'Not Paid' %}
+                            <tr>
+                                <td>Do you want to pay for this accomodation with Ywala.com secured payment? </td>
+                                <td>{% paystack_button amount=search_list.house_rent email=user.email  %}</td>
+                            </tr>
+                        {% else %}
+                            <tr>
+                                <td><strong>This Listing Has Been Paid for</strong></td>
+                            </tr>
+                        {% endif %}
                     </table>
                 
                 </div>
@@ -255,12 +261,13 @@
     </div>
 <div id='related'> 
     <h3 style='color:#666666'>Related Houses</h3>
-    <div class='row'>
+    <div class='row' id='related2'>
         {% for relateds in related %}
             {% if relateds.id != search_list.id %}
-                        <div class='col-sm-6'>
+                        <div class='col-sm-6' id='related-row'>
                             <div id='searchInner'>
-                                <img src='{{relateds.house_image2.url}}'   class='responsive'>
+                                   
+                                    <a href="{% url 'search-detail' relateds.id %}"><img src='{{relateds.house_image2.url}}'   class='responsive' id='related-image'></a>
                                 <div>
                                     <div id='rightsearch'>
                                         {{relateds.name_of_accomodation}}<br>

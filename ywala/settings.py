@@ -28,7 +28,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'cg#p$g+j9taxaadad!#a3cup@1$8ob
 #DEBUG = True
 DEBUG = bool( os.environ.get('DJANGO_DEBUG', True) )
 
-ALLOWED_HOSTS = ['sheltered-falls-26116.herokuapp.com', '127.0.0.1', 'www.ywala.com', 'ywala.com']
+ALLOWED_HOSTS = ['sheltered-falls-26116.herokuapp.com', '127.0.0.1', 'www.ywala.com', 'ywala.com', 'www.gateofsounds.faith', 'gateofsounds.faith']
 
 
 # Application definition

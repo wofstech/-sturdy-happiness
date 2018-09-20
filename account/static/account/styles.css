@@ -727,11 +727,24 @@ footer a{
 }
 
 .blog-body-details{
-    font-size: 18px;
+    font-size: 15px;
+}
+
+#related2{
+    padding-bottom: 50px;
+    margin-top: 20px;
+}
+
+#related-image{
+    border-radius: 10px;
 }
 
 
 @media (max-width:600px){
+
+    .blog-home-2{
+        padding:20px;
+    }
 
     .custom-well{
         background:#fff;

@@ -7,6 +7,17 @@
 {% block content %}     
     <section id='dashboard-showcase'>
            <div class='dashboard-showcase2'>
+                <div class="alert alert-success text-center">
+                        <p>    
+                            {% postman_unread as unread_count %}
+                            ...
+                            {% if unread_count > 1%}
+                               <a href='{% url "postman:inbox" %}' style='color:#666666'>You have <strong>{{ unread_count }}</strong> unread messages.</a> 
+                            {% else %}
+                                <a href='{% url "postman:inbox" %}' style='color:#666666'>You have <strong>{{ unread_count }}</strong> unread message.</a>
+                            {% endif %}  
+                        </p>
+                    </div> 
                <div class='row' style='text-align:center'>
                    <div class='col-sm-4' id='dash-inner'>
                        <div class='iconLock'>
