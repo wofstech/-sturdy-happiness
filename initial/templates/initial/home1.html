@@ -1,5 +1,10 @@
 <input type="submit" value="Upload Listing" class='btn btn-success' >
 
+
+<form method='get' action='{% url "searchme" %}'>
+        <input type='text' name='q' placeholder="Enter Search Keyword" value='{{ request.get.q }}'>
+        <input type='submit' value='Search' id='sub1' >
+    </form>
 <!DOCTYPE html>
 <html lang="en">
 

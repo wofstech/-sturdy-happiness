@@ -739,8 +739,68 @@ footer a{
     border-radius: 10px;
 }
 
+.butse{
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+{
+    box-sizing: border-box;
+  }
+  
+  /* Style the search field */
+  form.example input[type=text] {
+    padding: 12px;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    float: left;
+    width: 80%;
+    color:#666666;
+    background: #f1f1f1;
+  }
+
+form.example input::-webkit-input-placeholder{
+    text-align: center;
+}
+
+form.example button {
+    float: left;
+    width: 20%;
+    padding: 12px;
+    background: #286DA8;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none; /* Prevent double borders */
+    cursor: pointer;
+  }
+  
+  form.example button:hover {
+    background: #0b7dda;
+  }
+  
+  /* Clear floats */
+  form.example::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+.search-form-new{
+    width:40%;
+    margin: auto;
+}
+
+
 
 @media (max-width:600px){
+
+    .search-form-new{
+        width:95%;
+        margin: auto;
+    }
 
     .blog-home-2{
         padding:20px;
