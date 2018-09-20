@@ -26,6 +26,7 @@ def addlisting(request):
         if house_form.is_valid():    
             Houses = house_form.save(commit=False)
             Houses.author=request.user
+            Houses.Payment_status = "Not Paid"
             Houses.save()
             id = Houses.pk
             messages.success(request, 'Listing Created Succesfully successfully')
