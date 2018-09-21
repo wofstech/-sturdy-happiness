@@ -1,6 +1,32 @@
-{% block content %}
+
+
+
+
+
+
+<!--
+Author: Colorlib
+Author URL: https://colorlib.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<title>Ywala Housing</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- Custom Theme files -->
+<link href="css/style2.css" rel="stylesheet"  />
+<!-- //Custom Theme files -->
+<!-- web font -->
+<link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
+<!-- //web font -->
+
+{% load widget_tweaks %}
 {% load static %}
-<link rel='stylesheet' href='{% static "account/styles.css" %}'> 
+<link rel='stylesheet' href='{% static "account/style2.css" %}' type="text/css" media="all"> 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
@@ -8,20 +34,45 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>  
-{% load bootstrap3 %}
-{% load bootstrap %}
-<section id='sshowcase'>
-    <br>
-    <div class='scontainer'>
-        <h1 style="font-family: 'Tangerine', serif; font-size: 58px; color:#fff;">Create an account</h1>  
-        <p>Please, sign up using the following form:</p>
-        <form action="." method="post">
-            {{ user_form|bootstrap }}    
-             
-            {% csrf_token %}    
-            <p><input type="submit" value="Create my account" class='btn btn-primary'></p>  
-        </form> 
-    </div>
-</section>
-{% endblock %}
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+</head>
+<body>
+	<!-- main -->
+	<div class="main-w3layouts wrapper">
+		<h1>SignUp Form</h1>
+		<div class="main-agileinfo">
+			<div class="agileits-top">
+                    
+                <form action="." method="post">   {% csrf_token %}
+                     
+                    {% render_field user_form.username class="text" type="text" name="Username" placeholder="Username" required="" %}
+                    {% render_field user_form.first_name class="text w3lpass" type="text" name="Username" placeholder="FirstName" required="" %}
+                    {% render_field user_form.email class="text email" type="email" name="email" placeholder="Email" required="" %}
+                    {% render_field user_form.password class="text" type="password" name="password" placeholder="Password" required="" %}
+                    {% render_field user_form.password2 class="text w3lpass" type="password" name="password" placeholder="Confirm Password" required="" %}
+
+					
+					
+					<input type="submit" value="Create my account" class='btn btn-primary'>
+				</form>
+				<p>Already have an Account? <a href="{% url 'login' %}"> Login Now!</a></p>
+			</div>
+		</div>
+		
+		<ul class="colorlib-bubbles">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+	<!-- //main -->
+</body>
+</html>
+

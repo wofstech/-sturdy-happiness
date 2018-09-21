@@ -610,7 +610,8 @@ footer{
     }
 
 #dashboard-showcase{
-    background: #eaeff3;  
+    background: #eaeff3; 
+    padding:40px; 
 }
 
 .iconLock{
@@ -796,6 +797,10 @@ form.example button {
 
 
 @media (max-width:600px){
+    #dashboard-showcase{
+        background: #eaeff3; 
+        padding:10px; 
+    }
 
     .search-form-new{
         width:95%;
