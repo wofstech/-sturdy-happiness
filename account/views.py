@@ -57,6 +57,8 @@ def register(request):
             new_user.save() 
             profile = Profile.objects.create(user=new_user)            
             return render(request, 'account/register_done.html', {'new_user': new_user})
+        else:
+            messages.error(request, "Error")
     else:        
          user_form = UserRegistrationForm()    
     return render(request, 'account/register.html', {'user_form': user_form}) 

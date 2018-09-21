@@ -119,6 +119,10 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     background-attachment: fixed;
     font-family: 'Roboto', sans-serif;
   }
+
+  .inner-signup{
+    padding:20px;
+}
   
   h1 {
     font-size: 3em;
